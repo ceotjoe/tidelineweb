@@ -1,0 +1,28 @@
+# Caddyfile configuration for tideline.holzapfel-online.de
+# Caddy automatically provisions and renews SSL certificates via Let's Encrypt.
+
+tideline.holzapfel-online.de {
+    root * /var/www/tideline.holzapfel-online.de
+    file_server
+
+    # Encode with gzip and zstd
+    encode gzip zstd
+
+    # Single Page Application fallback
+    try_files {path} /index.html
+
+    # Security headers
+    header {
+        X-Frame-Options "SAMEORIGIN"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    }
+
+    # Static asset caching
+    @static {
+        file
+        path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff2
+    }
+    header @static Cache-Control "public, max-age=31536000, immutable"
+}

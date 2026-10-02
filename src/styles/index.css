@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #f6f1e7;
+    --bg-surface: #fffcf6;
+    --bg-surface-variant: #e3f0ec;
+    --text-primary: #12343b;
+    --text-secondary: #3e5c61;
+    --color-primary: #1f6f68;
+    --color-primary-text: #ffffff;
+    --color-wave-back: #9fd3c7;
+    --color-wave-front: #1f6f68;
+    --border-outline: #6f8a8b;
+    --color-focus: #1a4f8b;
+  }
+
+  /* Dark Mode: Deep Sea */
+  .theme-dark {
+    --bg-page: #0f1e22;
+    --bg-surface: #16292e;
+    --bg-surface-variant: #1e383d;
+    --text-primary: #e8f1ef;
+    --text-secondary: #a9c2c0;
+    --color-primary: #7fd1c3;
+    --color-primary-text: #08302b;
+    --color-wave-back: #1e383d;
+    --color-wave-front: #7fd1c3;
+    --border-outline: #435e63;
+    --color-focus: #8cc4ff;
+  }
+
+  /* Sunlight Mode: High-contrast monochrome outdoor */
+  .theme-sunlight {
+    --bg-page: #ffffff;
+    --bg-surface: #ffffff;
+    --bg-surface-variant: #f0f0f0;
+    --text-primary: #000000;
+    --text-secondary: #1f1f1f;
+    --color-primary: #003d37;
+    --color-primary-text: #ffffff;
+    --color-wave-back: #d0e8e2;
+    --color-wave-front: #000000;
+    --border-outline: #000000;
+    --color-focus: #0000b8;
+  }
+
+  /* Night Red Mode: Astronomical & dark-adapted vision */
+  .theme-nightred {
+    --bg-page: #000000;
+    --bg-surface: #0d0000;
+    --bg-surface-variant: #1a0202;
+    --text-primary: #ff4433;
+    --text-secondary: #e03322;
+    --color-primary: #ff4433;
+    --color-primary-text: #000000;
+    --color-wave-back: #1a0000;
+    --color-wave-front: #cc2214;
+    --border-outline: #8a140a;
+    --color-focus: #ff6655;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+  }
+}
+
+/* Slashed Zero & Tabular Numbers for Amateur Radio Callsigns */
+.font-callsign {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'zero' 1;
+  font-variant-numeric: slashed-zero tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* Smooth transitions for theme switches */
+.theme-transition {
+  transition:
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-outline);
+  border-radius: 9999px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

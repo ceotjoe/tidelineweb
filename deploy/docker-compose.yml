@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  tideline-web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: tideline-web
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    environment:
+      - VIRTUAL_HOST=tideline.holzapfel-online.de
+      - LETSENCRYPT_HOST=tideline.holzapfel-online.de
