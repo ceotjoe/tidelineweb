@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Language, translations } from '../data/translations'
 import { MANUALS_EN, MANUALS_DE } from '../data/manualsData'
 import { BookOpen, Search, ExternalLink, ChevronRight, Check } from 'lucide-react'
+import { MarkdownRenderer } from './MarkdownRenderer'
 
 interface ManualExplorerProps {
   lang: Language
@@ -123,9 +124,7 @@ export const ManualExplorer: React.FC<ManualExplorerProps> = ({ lang }) => {
               </div>
 
               {/* Doc Body Text */}
-              <div className="space-y-4 text-sm sm:text-base text-[var(--text-primary)] leading-relaxed whitespace-pre-line font-normal">
-                {activeDoc.content}
-              </div>
+              <MarkdownRenderer content={activeDoc.content} />
 
               {/* Direct GitHub permalink */}
               <div className="pt-6 border-t border-[var(--border-outline)]/20 flex items-center justify-between text-xs text-[var(--text-secondary)]">
