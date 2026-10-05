@@ -1,6 +1,16 @@
 import React from 'react'
 import { Language, translations } from '../data/translations'
-import { WifiOff, RefreshCw, Smartphone, Lock, CheckCircle, Apple, Monitor } from 'lucide-react'
+import {
+  WifiOff,
+  RefreshCw,
+  Smartphone,
+  CheckCircle,
+  Apple,
+  Monitor,
+  Mountain,
+  Trophy,
+  Terminal,
+} from 'lucide-react'
 
 interface FeaturesBentoProps {
   lang: Language
@@ -88,12 +98,12 @@ export const FeaturesBento: React.FC<FeaturesBentoProps> = ({ lang }) => {
             </div>
           </div>
 
-          {/* Card 3: Rugged Ergonomics */}
+          {/* Card 3: SOTA, POTA & WWFF Activations */}
           <div className="lg:col-span-5 rounded-3xl p-8 bg-[var(--bg-surface)] border-2 border-[var(--border-outline)]/40 shadow-sm flex flex-col justify-between hover:border-[var(--color-primary)]/70 transition-all group">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--bg-surface-variant)] flex items-center justify-center text-[var(--color-primary)] border border-[var(--border-outline)]/30">
-                  <Smartphone className="w-6 h-6" />
+                  <Mountain className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-[var(--bg-surface-variant)] text-[var(--color-primary)]">
                   {t.card3.tag}
@@ -107,22 +117,22 @@ export const FeaturesBento: React.FC<FeaturesBentoProps> = ({ lang }) => {
               </p>
             </div>
 
-            <div className="mt-8 flex items-center gap-3 text-xs font-semibold text-[var(--text-secondary)]">
+            <div className="mt-8 flex flex-wrap items-center gap-2 text-xs font-semibold text-[var(--text-secondary)]">
               <span className="px-3 py-1.5 rounded-xl bg-[var(--bg-surface-variant)] border border-[var(--border-outline)]/30">
-                🧤 64dp Glove Mode
+                🏔️ SOTA · POTA · WWFF
               </span>
               <span className="px-3 py-1.5 rounded-xl bg-[var(--bg-surface-variant)] border border-[var(--border-outline)]/30">
-                👁 WCAG 2.2 AA
+                📍 Distance & Grid Search
               </span>
             </div>
           </div>
 
-          {/* Card 4: Cryptographically Secure */}
+          {/* Card 4: Contest Mode & Field Ergonomics */}
           <div className="lg:col-span-7 rounded-3xl p-8 bg-[var(--bg-surface)] border-2 border-[var(--border-outline)]/40 shadow-sm flex flex-col justify-between hover:border-[var(--color-primary)]/70 transition-all group">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--bg-surface-variant)] flex items-center justify-center text-[var(--color-primary)] border border-[var(--border-outline)]/30">
-                  <Lock className="w-6 h-6" />
+                  <Trophy className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-[var(--bg-surface-variant)] text-[var(--color-primary)]">
                   {t.card4.tag}
@@ -137,9 +147,9 @@ export const FeaturesBento: React.FC<FeaturesBentoProps> = ({ lang }) => {
             </div>
 
             <div className="mt-8 p-4 rounded-2xl bg-[var(--bg-surface-variant)]/60 border border-[var(--border-outline)]/30 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-              <span className="text-[var(--text-secondary)]">SQLite3MultipleCiphers</span>
+              <span className="text-[var(--text-secondary)]">MASTER.SCP & Dupe Rules</span>
               <span className="text-[var(--color-primary)] font-bold">
-                Keychain & Keystore isolated
+                Cabrillo Export · Serial Allocator
               </span>
             </div>
           </div>
@@ -162,6 +172,7 @@ export const FeaturesBento: React.FC<FeaturesBentoProps> = ({ lang }) => {
                 { name: 'Android', icon: <Smartphone className="w-4 h-4" /> },
                 { name: 'macOS', icon: <Monitor className="w-4 h-4" /> },
                 { name: 'Windows', icon: <Monitor className="w-4 h-4" /> },
+                { name: 'Linux', icon: <Terminal className="w-4 h-4" /> },
               ].map((plat) => (
                 <div
                   key={plat.name}

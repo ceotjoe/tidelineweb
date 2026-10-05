@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) 
                   {t.brand}
                 </span>
                 <span className="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-[var(--bg-surface-variant)] text-[var(--text-secondary)] border border-[var(--border-outline)]/40">
-                  v0.1 MVP
+                  v0.4.0
                 </span>
               </div>
               <p className="text-xs text-[var(--text-secondary)] font-medium -mt-0.5 hidden sm:block">

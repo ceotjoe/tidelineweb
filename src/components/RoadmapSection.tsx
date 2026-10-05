@@ -1,6 +1,6 @@
 import React from 'react'
 import { Language, translations } from '../data/translations'
-import { CheckCircle2, Clock, Calendar, Sparkles } from 'lucide-react'
+import { CheckCircle2, Sparkles } from 'lucide-react'
 
 interface RoadmapSectionProps {
   lang: Language
@@ -22,30 +22,33 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ lang }) => {
       milestone: t.m2.version,
       status: t.m2.status,
       desc: t.m2.desc,
-      isCurrent: true,
-      badgeColor: 'bg-seafoam-500/20 text-seafoam-700 dark:text-seafoam-300 border-seafoam-500/40',
-      icon: <Sparkles className="w-4 h-4 text-[var(--color-primary)] animate-pulse" />,
+      isDone: true,
+      badgeColor: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
     },
     {
       milestone: t.m3.version,
       status: t.m3.status,
       desc: t.m3.desc,
-      badgeColor: 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30',
-      icon: <Clock className="w-4 h-4 text-amber-500" />,
+      isDone: true,
+      badgeColor: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
     },
     {
       milestone: t.m4.version,
       status: t.m4.status,
       desc: t.m4.desc,
-      badgeColor: 'bg-slate-500/15 text-slate-700 dark:text-slate-300 border-slate-500/30',
-      icon: <Calendar className="w-4 h-4 text-slate-500" />,
+      isDone: true,
+      badgeColor: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
     },
     {
       milestone: t.m5.version,
       status: t.m5.status,
       desc: t.m5.desc,
-      badgeColor: 'bg-slate-500/15 text-slate-700 dark:text-slate-300 border-slate-500/30',
-      icon: <Calendar className="w-4 h-4 text-slate-500" />,
+      isCurrent: true,
+      badgeColor: 'bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-500/40',
+      icon: <Sparkles className="w-4 h-4 text-[var(--color-primary)] animate-pulse" />,
     },
   ]
 

@@ -7,6 +7,8 @@ export interface QSOItem {
   rstRcvd: string
   timeUtc: string
   dxcc: string
+  ref?: string
+  notes?: string
   syncState: 'synced' | 'uploading' | 'queued' | 'local' | 'conflict'
 }
 
@@ -64,6 +66,7 @@ export const INITIAL_QSOS: QSOItem[] = [
     rstRcvd: '59',
     timeUtc: '11:39',
     dxcc: 'Austria (SOTA OE/TI-042)',
+    ref: 'OE/TI-042',
     syncState: 'local',
   },
 ]

@@ -15,15 +15,15 @@ export const translations = {
       themePicker: 'Theme',
     },
     hero: {
-      badge: 'Open Source · Cross-Platform · Wavelog API v2',
+      badge: 'Open Source · Cross-Platform · Wavelog API v2 · v0.4.0',
       titleLine1: 'Logging in the wild.',
       titleLine2: 'Synced when you are home.',
       description:
-        'Tideline is an offline-first amateur radio QSO logger for iOS, iPadOS, Android, macOS and Windows. Built for summits, parks, field days and contests — reliably synced to your own Wavelog instance whenever you reconnect.',
-      ctaPrimary: 'Explore Repository',
+        'Tideline is an offline-first amateur radio QSO logger for iOS, iPadOS, Android, macOS, Windows and Linux. Built for summits, parks, field days, and contests — reliably synced to your own Wavelog instance whenever you reconnect.',
+      ctaPrimary: 'Explore v0.4.0 on GitHub',
       ctaSecondary: 'Read the Manual',
       ctaRoadmap: 'View Roadmap',
-      statusNote: 'Status: MVP (v0.1) in development. End-to-end sync, DXCC & ADIF working.',
+      statusNote: 'Status: Version 0.4.0 released. Includes Fast Log Entry, SOTA/POTA activations, contest mode, and multi-account sync.',
     },
     mockup: {
       title: 'Tideline Logger',
@@ -43,12 +43,17 @@ export const translations = {
       statusConflict: 'Conflict',
       dxccDetected: 'DXCC Entity Detected',
       tryItNote: 'Try entering a callsign below (e.g. DL1XYZ, K1TTT, EA3ABC, G4ZBA):',
+      modeStandard: 'Standard Form',
+      modeFle: 'Fast Log Entry (FLE)',
+      fleHint: 'Type shorthand: e.g. 14.285 DL1XYZ 59 59 @Hans #K-1234',
+      fleApply: 'Commit FLE Batch',
+      notesLabel: 'Offline Notes',
     },
     fieldModes: {
       sectionBadge: 'Ergonomics in the Wild',
-      title: 'Four Dedicated Modes for Real Field Operations',
+      title: 'One-Switch Field Mode & Four Display Themes',
       subtitle:
-        'From high noon in an alpine meadow to midnight in a contest tent, Tideline adapts instantly so you never lose contrast or night vision.',
+        'From high noon in an alpine meadow to midnight in a contest tent: Settings → Field mode instantly engages Sunlight contrast, 64dp glove mode, screen wake-lock, and battery saver.',
       modes: {
         light: {
           name: 'Low Tide (Light)',
@@ -76,27 +81,27 @@ export const translations = {
         'Most logging apps treat losing connection as an exception. In Tideline, being offline is the baseline design.',
       card1: {
         title: 'Offline is Normal, Not an Error',
-        desc: 'DXCC prefixes, country lookups, and "worked before" hints execute locally in milliseconds from on-device databases. Logging never stalls waiting for a spinner.',
+        desc: 'DXCC prefixes, Fast Log Entry (SimpleFLE shorthand), and local callsign directory with private notes execute locally in milliseconds from on-device databases.',
         tag: 'Instant Responsiveness',
       },
       card2: {
-        title: 'Sync You Can Trust',
-        desc: 'Every QSO reports its exact state: local, queued, uploading, synced, or conflict. Transactions are journaled and idempotent. Contacts are never silently dropped or duplicated.',
+        title: 'Sync You Can Trust & Multi-Account',
+        desc: 'Every QSO reports its exact state: local, queued, uploading, synced, or conflict. Supports multiple Wavelog accounts and safe local space freeing without losing history.',
         tag: 'Zero Data Loss',
       },
       card3: {
-        title: 'Rugged Ergonomics in the Field',
-        desc: 'Generous 64dp glove-friendly touch targets, single-handed portrait usage on summits, full keyboard shortcuts on desktop & tablets, and WCAG 2.2 AA accessibility.',
-        tag: 'Field Ready',
+        title: 'SOTA, POTA & WWFF Activations',
+        desc: 'Download official reference lists directly to your device. Search by reference, name, or distance to your grid square, with live progress tracking toward activation validity.',
+        tag: 'Summit & Park Ready',
       },
       card4: {
-        title: 'Private & Cryptographically Secure',
-        desc: 'Zero telemetry, zero third-party trackers. The local database is encrypted at rest via SQLite3MultipleCiphers. Wavelog tokens stay safely isolated in the hardware secure store.',
-        tag: 'Encrypted at Rest',
+        title: 'Contest Mode & Field Ergonomics',
+        desc: 'Keyboard-first fast entry, non-repeating serial allocator, dupe rules, Super Check Partial (MASTER.SCP), Cabrillo export, and one-switch field mode with battery saver.',
+        tag: 'Competition Tested',
       },
       crossPlatform: {
-        title: 'One Clean Codebase, Five Native Platforms',
-        desc: 'Crafted in Flutter with a clean domain/data layered architecture for iOS, iPadOS, Android, macOS, and Windows.',
+        title: 'One Clean Codebase, Six Desktop & Mobile Targets',
+        desc: 'Crafted in Flutter with a clean layered architecture for iOS, iPadOS, Android, macOS, Windows, and Linux.',
       },
     },
     syncEngine: {
@@ -116,7 +121,7 @@ export const translations = {
     },
     roadmap: {
       sectionBadge: 'Development Milestones',
-      title: 'The Journey from MVP to v1.0',
+      title: 'From Concept to Version 0.4.0 & Beyond',
       subtitle:
         'Tideline follows a phased, test-driven roadmap. Every milestone is validated against automated mock server test suites.',
       m1: {
@@ -126,37 +131,37 @@ export const translations = {
       },
       m2: {
         version: 'M2: MVP (v0.1)',
-        status: 'In Progress / Feature Complete',
+        status: 'Completed',
         desc: 'Core QSO logging, transparent sync queue & journal, offline DXCC lookups, ADIF export/import, encrypted backups, EN/DE localization.',
       },
       m3: {
         version: 'M3: Contest Mode (v0.2)',
-        status: 'Next',
-        desc: 'Keyboard-first fast entry, non-repeating serial allocator, dupe rules, Super Check Partial (MASTER.SCP), Cabrillo export.',
+        status: 'Completed',
+        desc: 'Keyboard-first fast entry, non-repeating serial allocator, dupe rules, Super Check Partial (MASTER.SCP), Cabrillo export, Wavelog contest sessions.',
       },
       m4: {
         version: 'M4: Activations (v0.3)',
-        status: 'Planned',
-        desc: 'SOTA, POTA, and WWFF activation sessions with offline reference packs and live QSO-to-validity trackers.',
+        status: 'Completed',
+        desc: 'SOTA, POTA, and WWFF activation sessions with offline reference packs, distance search, and live QSO-to-validity trackers.',
       },
       m5: {
-        version: 'M5: FLE & Field Modes (v0.4 → v1.0)',
-        status: 'Planned',
-        desc: 'Fast Log Entry (FLE) shorthand parsing, battery saver tuning, multi-Wavelog account switcher, and official App Store / Play Store builds.',
+        version: 'M5: FLE, Field Mode & Multi-Account (v0.4.0)',
+        status: 'Released (v0.4.0)',
+        desc: 'Fast Log Entry (FLE) shorthand parsing, one-switch field mode with battery saver, multiple Wavelog accounts, callsign directory, and desktop navigation.',
       },
     },
     manuals: {
       sectionBadge: 'Documentation Hub',
       title: 'Official Guides & Documentation',
       subtitle:
-        'Explore the comprehensive manuals bundled directly with Tideline. Learn how to set up your API token, log offline, and manage sync.',
+        'Explore the comprehensive manuals bundled directly with Tideline. Learn how to set up your API token, log offline, activate parks, and run contests.',
       readFullButton: 'View Full Guide on GitHub',
     },
     download: {
-      title: 'Ready to elevate your portable logging?',
+      title: 'Download Tideline v0.4.0',
       subtitle:
-        'Tideline is currently in active v0.1 MVP development. You can clone the repository, test the builds, or contribute to the open-source codebase.',
-      btnGithub: 'View on GitHub',
+        'Tideline 0.4.0 is available now. Download standalone packages for Windows and Linux on GitHub, join the iOS and macOS TestFlight beta, or test the Android build via Google Play.',
+      btnGithub: 'GitHub Releases (Windows & Linux)',
       btnWavelog: 'About Wavelog.org',
       starLabel: 'Star on GitHub',
     },
@@ -207,15 +212,15 @@ Die Tideline-App speichert alle Log-Daten lokal verschlüsselt auf Ihrem Gerät.
       themePicker: 'Design',
     },
     hero: {
-      badge: 'Open Source · Plattformübergreifend · Wavelog API v2',
+      badge: 'Open Source · Plattformübergreifend · Wavelog API v2 · v0.4.0',
       titleLine1: 'Funken im Gelände.',
       titleLine2: 'Synchronisiert zu Hause.',
       description:
-        'Tideline ist ein Offline-first Amateurfunk-QSO-Logger für iOS, iPadOS, Android, macOS und Windows. Entwickelt für Berggipfel, Parks, Fielddays und Contests – zuverlässig mit deiner eigenen Wavelog-Instanz synchronisiert, sobald du wieder Empfang hast.',
-      ctaPrimary: 'GitHub Repository',
+        'Tideline ist ein Offline-first Amateurfunk-QSO-Logger für iOS, iPadOS, Android, macOS, Windows und Linux. Entwickelt für Berggipfel, Parks, Fielddays und Contests – zuverlässig mit deiner eigenen Wavelog-Instanz synchronisiert, sobald du wieder Empfang hast.',
+      ctaPrimary: 'v0.4.0 auf GitHub ansehen',
       ctaSecondary: 'Handbuch lesen',
       ctaRoadmap: 'Roadmap ansehen',
-      statusNote: 'Status: MVP (v0.1) in aktiver Entwicklung. Sync, DXCC & ADIF funktionieren.',
+      statusNote: 'Status: Version 0.4.0 veröffentlicht. Enthält Fast Log Entry, SOTA/POTA-Aktivierungen, Contest-Modus und 1-Klick-Feldmodus.',
     },
     mockup: {
       title: 'Tideline Logger',
@@ -235,12 +240,17 @@ Die Tideline-App speichert alle Log-Daten lokal verschlüsselt auf Ihrem Gerät.
       statusConflict: 'Konflikt',
       dxccDetected: 'Erkanntes DXCC-Land',
       tryItNote: 'Tippe ein Rufzeichen ein (z.B. DL1XYZ, K1TTT, EA3ABC, G4ZBA):',
+      modeStandard: 'Standard-Formular',
+      modeFle: 'Fast Log Entry (FLE)',
+      fleHint: 'Kurzschrift eingeben: z.B. 14.285 DL1XYZ 59 59 @Hans #DL-0042',
+      fleApply: 'FLE-Batch speichern',
+      notesLabel: 'Lokale Notiz',
     },
     fieldModes: {
       sectionBadge: 'Ergonomie im Praxiseinsatz',
-      title: 'Vier maßgeschneiderte Modi für echte Feldeinsätze',
+      title: '1-Klick-Feldmodus & Vier Display-Themen',
       subtitle:
-        'Von grellem Sonnenlicht auf der Alm bis zur stockdunklen Nacht im Contest-Zelt: Tideline passt sich an, damit deine Augen und Nachtsicht geschützt bleiben.',
+        'Von grellem Sonnenlicht auf der Alm bis zur stockdunklen Nacht im Contest-Zelt: Einstellungen → Feldmodus aktiviert sofort Sonnenlicht-Kontrast, 64dp-Handschuh-Modus, Display-Aktivhaltung und Batteriesparer.',
       modes: {
         light: {
           name: 'Ebbe (Hell / Sand & Gischt)',
@@ -268,27 +278,27 @@ Die Tideline-App speichert alle Log-Daten lokal verschlüsselt auf Ihrem Gerät.
         'Für die meisten Apps ist ein Verbindungsverlust ein Fehler. Bei Tideline ist Offline-Sein der bewusste Normalzustand.',
       card1: {
         title: 'Offline ist der Normalzustand',
-        desc: 'DXCC-Präfixe, Länderzuordnungen und Vorab-Hinweise laufen 100% lokal auf dem Gerät. Das Loggen stockt nie durch Ladekreise.',
+        desc: 'DXCC-Präfixe, Fast Log Entry (SimpleFLE Kurzschrift) und das lokale Rufzeichenverzeichnis mit Notizen laufen 100% lokal auf dem Gerät.',
         tag: 'Verzögerungsfrei',
       },
       card2: {
-        title: 'Synchronisation, der du vertrauen kannst',
-        desc: 'Jedes QSO zeigt seinen exakten Status: lokal, wartend, sendend, synchronisiert oder Konflikt. Transaktionen werden journalisiert und duplikatfrei übertragen.',
+        title: 'Synchronisation & Multi-Account',
+        desc: 'Jedes QSO zeigt seinen exakten Status: lokal, wartend, sendend, synchronisiert oder Konflikt. Unterstützt mehrere Wavelog-Accounts und lokale Speicherbereinigung.',
         tag: 'Kein Datenverlust',
       },
       card3: {
-        title: 'Ergonomie für den Außeneinsatz',
-        desc: 'Großzügige 64dp-Touchziele für die Bedienung mit Handschuhen, Einhandbedienung am Smartphone, Tastaturkürzel am Tablet/PC und WCAG 2.2 AA Barrierefreiheit.',
-        tag: 'Felderprobt',
+        title: 'SOTA, POTA & WWFF Aktivierungen',
+        desc: 'Lade offizielle Referenzlisten direkt auf dein Gerät. Suche nach Referenz, Name oder Entfernung zu deinem Locator mit Fortschrittsanzeige zur Gültigkeit.',
+        tag: 'Berg- & Parkfunk',
       },
       card4: {
-        title: 'Sicher und privat ohne Kompromisse',
-        desc: 'Keine Telemetrie, keine Tracker. Lokale Datenbank mit SQLite3MultipleCiphers verschlüsselt. Wavelog-API-Token liegen geschützt im Hardware-Schlüsselspeicher.',
-        tag: 'Ende-zu-Ende verschlüsselt',
+        title: 'Contest-Modus & Feldergonomie',
+        desc: 'Tastatur-orientierte Schnelleingabe, lückenlose Seriennummern, Dupe-Prüfung, Super Check Partial (MASTER.SCP), Cabrillo-Export und 1-Klick-Feldmodus.',
+        tag: 'Wettkampferprobt',
       },
       crossPlatform: {
-        title: 'Eine Codebasis für fünf Plattformen',
-        desc: 'Entwickelt mit Flutter für iOS, iPadOS, Android, macOS und Windows in sauber getrennter Schichtenarchitektur.',
+        title: 'Eine Codebasis für sechs Desktop- und Mobil-Plattformen',
+        desc: 'Entwickelt mit Flutter für iOS, iPadOS, Android, macOS, Windows und Linux in sauber getrennter Schichtenarchitektur.',
       },
     },
     syncEngine: {
@@ -308,7 +318,7 @@ Die Tideline-App speichert alle Log-Daten lokal verschlüsselt auf Ihrem Gerät.
     },
     roadmap: {
       sectionBadge: 'Entwicklungsfahrplan',
-      title: 'Der Weg vom MVP zur Version 1.0',
+      title: 'Von der Idee zur Version 0.4.0 & Zukunft',
       subtitle:
         'Tideline wird in klar definierten, testgetriebenen Phasen entwickelt. Jeder Meilenstein wird automatisiert gegen Mock-Server geprüft.',
       m1: {
@@ -318,37 +328,37 @@ Die Tideline-App speichert alle Log-Daten lokal verschlüsselt auf Ihrem Gerät.
       },
       m2: {
         version: 'M2: MVP (v0.1)',
-        status: 'In Entwicklung / Funktionsvollständig',
+        status: 'Abgeschlossen',
         desc: 'QSO-Logging, transparente Sync-Warteschlange mit Journal, Offline-DXCC, ADIF Export/Import, verschlüsseltes Backup, DE/EN Lokalisierung.',
       },
       m3: {
         version: 'M3: Contest-Modus (v0.2)',
-        status: 'Als Nächstes',
-        desc: 'Tastatur-orientierte Schnelleingabe, lückenlose Seriennummern, Dupe-Prüfung, Super Check Partial (MASTER.SCP), Cabrillo-Export.',
+        status: 'Abgeschlossen',
+        desc: 'Tastatur-orientierte Schnelleingabe, lückenlose Seriennummern, Dupe-Prüfung, Super Check Partial (MASTER.SCP), Cabrillo-Export, Wavelog-Sessions.',
       },
       m4: {
         version: 'M4: Aktivierungen (v0.3)',
-        status: 'Geplant',
-        desc: 'SOTA, POTA und WWFF Aktivierungssitzungen mit Offline-Referenzdaten und Fortschrittsanzeige zur Gültigkeit.',
+        status: 'Abgeschlossen',
+        desc: 'SOTA, POTA und WWFF Aktivierungssitzungen mit Offline-Referenzdaten, Entfernungssuche und Fortschrittsanzeige zur Gültigkeit.',
       },
       m5: {
-        version: 'M5: FLE & Feldmodi (v0.4 → v1.0)',
-        status: 'Geplant',
-        desc: 'Fast Log Entry (FLE) Kurzschrift, Batteriespar-Modus, Multi-Wavelog-Konten und offizielle App Store / Play Store Versionen.',
+        version: 'M5: FLE, Feldmodus & Multi-Account (v0.4.0)',
+        status: 'Veröffentlicht (v0.4.0)',
+        desc: 'Fast Log Entry (FLE) Kurzschrift, 1-Klick-Feldmodus mit Batteriesparer, Multi-Wavelog-Konten, Rufzeichenverzeichnis und Desktop-Navigation.',
       },
     },
     manuals: {
       sectionBadge: 'Handbuch & Anleitungen',
       title: 'Offizielle Dokumentation direkt im Web',
       subtitle:
-        'Lies die detaillierten Anleitungen von Tideline: Ersteinrichtung, Wavelog API-Token, Offline-Logging und Tastenkombinationen.',
+        'Lies die detaillierten Anleitungen von Tideline: Ersteinrichtung, Wavelog API-Token, Offline-Logging, FLE, SOTA/POTA und Tastenkombinationen.',
       readFullButton: 'Vollständiges Dokument auf GitHub ansehen',
     },
     download: {
-      title: 'Bereit für zuverlässiges Logging unterwegs?',
+      title: 'Tideline v0.4.0 herunterladen',
       subtitle:
-        'Tideline befindet sich in der aktiven v0.1 MVP-Phase. Du kannst den Quellcode auf GitHub einsehen, Test-Builds erstellen oder mitwirken.',
-      btnGithub: 'Auf GitHub ansehen',
+        'Tideline 0.4.0 ist jetzt verfügbar. Lade Standalone-Pakete für Windows und Linux von GitHub herunter, teste die iOS- und macOS-Beta via TestFlight oder Android via Google Play.',
+      btnGithub: 'GitHub Releases (Windows & Linux)',
       btnWavelog: 'Mehr über Wavelog.org',
       starLabel: 'Stern auf GitHub vergeben',
     },

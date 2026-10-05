@@ -37,7 +37,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a
-              href="https://github.com/ceotjoe/tideline"
+              href="https://github.com/ceotjoe/tideline/releases"
               target="_blank"
               rel="noopener noreferrer"
               className="px-7 py-4 rounded-2xl font-bold text-sm bg-[var(--color-primary)] text-[var(--color-primary-text)] hover:opacity-95 transition-all shadow-lg hover:shadow-xl flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)]"
@@ -70,7 +70,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
           {/* Supported platform tags */}
           <div className="pt-6 border-t border-[var(--border-outline)]/20 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-[var(--text-secondary)]">
             <span>Platforms:</span>
-            {['iOS', 'iPadOS', 'Android', 'macOS', 'Windows'].map((p) => (
+            {['iOS', 'iPadOS', 'Android', 'macOS', 'Windows', 'Linux'].map((p) => (
               <span
                 key={p}
                 className="px-2.5 py-1 rounded-md bg-[var(--bg-surface)] border border-[var(--border-outline)]/30"

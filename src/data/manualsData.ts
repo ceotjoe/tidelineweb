@@ -104,6 +104,83 @@ Tideline never silently discards or overwrites QSOs. If the Wavelog server rejec
 - **Alt+F:** Switch to FM / FT8.
 - **Alt+T:** Open Field Theme picker (Light, Dark, Sunlight, Night Red).`,
   },
+  {
+    id: 'fast-log-entry',
+    title: 'Fast Log Entry (FLE)',
+    category: 'Field Operations',
+    summary: 'Type many QSOs as SimpleFLE shorthand without touching the mouse.',
+    content: `### What is Fast Log Entry?
+Type QSOs as shorthand in the dialect of Wavelog's SimpleFLE: time fragments, band, mode, frequency, reports, locator, references (#K-1234), @name, date and time zone. Tideline previews how every line was interpreted, checks for duplicate times or calls, and commits them all in a single local database transaction.
+
+### How to Access
+- Open with the **lightning bolt** in the log header, or press **Ctrl/⌘ + Shift + F**.
+
+### Example Syntax
+\`\`\`
+date 2026-10-05
+20m ssb
+1734 DL1ABC 59 59 JO62 @Anna
+5 G4XYZ 59 57
+40 F5ABC <good signal>
+14.285 ssb #K-1234
+1810 W1AW 59 59
+\`\`\`
+
+- **Time shorthand:** The first QSO needs full UTC time (1734). Subsequent contacts only need changed digits: 5 after 1734 means 17:35.
+- Works 100% offline. Running activations automatically tag the logged QSOs.`,
+  },
+  {
+    id: 'activations',
+    title: 'SOTA, POTA & WWFF Activations',
+    category: 'Field Operations',
+    summary: 'Offline summit and park lists, distance lookup, and validity tracker.',
+    content: `### Offline Reference Packs
+Download official SOTA, POTA, and WWFF reference directories directly over HTTPS inside Tideline:
+- **Search offline** by reference (e.g. DL/EW-001, K-1234, DLFF-0012), name, or region.
+- **Find nearest references:** Tideline computes distance and bearing from your Maidenhead grid square.
+
+### Live Activation Progress
+- Live counter showing progress toward activation validity (e.g. 10 QSOs for SOTA, 10 for POTA).
+- Park-to-park (P2P) and summit-to-summit (S2S) partner reference tracking.
+- Retains both your own reference and hunter references across ADIF exports.`,
+  },
+  {
+    id: 'contest-mode',
+    title: 'Contest Mode & Cabrillo Export',
+    category: 'Contests',
+    summary: 'Keyboard-first fast entry, serial allocator, dupe rules, and MASTER.SCP.',
+    content: `### Contest Features
+- **Keyboard-first logging:** Tab or Space advances fields instantly; Enter logs the contact.
+- **Serial Allocator:** Ensures serial numbers never repeat or jump, even across restarts.
+- **Dupe Checking & Super Check Partial:** Real-time callsign matching against user-imported MASTER.SCP.
+- **Live Rates & Multipliers:** View 10-minute and 60-minute QSO rates and active band multipliers.
+- **Export & Sync:** Generate compliant Cabrillo logs and synchronize sessions with Wavelog 3.2.0+.`,
+  },
+  {
+    id: 'field-mode',
+    title: 'One-Switch Field Mode & Battery Saver',
+    category: 'Ergonomics',
+    summary: 'Maximize outdoor readability, glove targets, screen wake-lock, and battery life.',
+    content: `### Instant Field Preparation
+Under **Settings → Field mode**, a single toggle configures:
+1. **Sunlight Theme:** Maximum monochrome contrast (≥ 7:1) for bright direct sunlight.
+2. **Glove Mode:** Expands touch targets to 64dp with generous spacing.
+3. **Keep Screen On:** Keeps display awake while the log, FLE, or contest screen is active.
+4. **Battery Saver:** Freezes the tide animation, updates the clock once per minute, and slows rate recalculations to conserve battery in the field.
+
+Each setting can also be toggled independently.`,
+  },
+  {
+    id: 'accounts',
+    title: 'Multiple Wavelog Accounts',
+    category: 'Accounts & Sync',
+    summary: 'Manage and switch between different Wavelog instances and operator profiles.',
+    content: `### Multi-Account Management
+Under **Settings → Wavelog accounts**, you can add, rename, or switch between multiple Wavelog instances or station credentials:
+- Independent API tokens stored securely per account.
+- Quick account switcher directly in the log screen header.
+- Sync covers all configured accounts, with waiting queues tracked per account.`,
+  },
 ]
 
 export const MANUALS_DE: ManualItem[] = [
@@ -202,5 +279,82 @@ Tideline verwirft niemals stillschweigend Kontakte. Lehnt der Server ein QSO ab,
 - **Alt+C:** CW aktivieren.
 - **Alt+S:** SSB aktivieren.
 - **Alt+T:** Feld-Design auswählen (Hell, Dunkel, Sonnenlicht, Nacht-Rot).`,
+  },
+  {
+    id: 'fast-log-entry',
+    title: 'Fast Log Entry (FLE)',
+    category: 'Feldeinsatz',
+    summary: 'Viele QSOs in SimpleFLE-Kurzschrift erfassen, ohne die Tastatur zu verlassen.',
+    content: `### Was ist Fast Log Entry?
+Erfasse QSOs blitzschnell als Kurztext im Dialekt von Wavelogs SimpleFLE: Zeitfragmente, Band, Betriebsart, Frequenz, Rapporte, Locator, Referenzen (#DL-0042), @Name, Datum und Zeitzone. Tideline zeigt eine Live-Vorschau der Interpretation, prüft auf Duplikate und speichert den gesamten Stapel in einer einzigen lokalen Transaktion.
+
+### Aufruf
+- Über das **Blitz-Symbol** in der oberen Leiste des Logbuchs oder mit **Strg/⌘ + Umschalt + F**.
+
+### Syntax-Beispiel
+\`\`\`
+date 2026-10-05
+20m ssb
+1734 DL1ABC 59 59 JO62 @Anna
+5 G4XYZ 59 57
+40 F5ABC <gutes Signal>
+14.285 ssb #DL-0042
+1810 W1AW 59 59
+\`\`\`
+
+- **Zeit-Kurzschrift:** Nur das erste QSO benötigt die volle UTC-Zeit (1734). Danach genügen die geänderten Ziffern: 5 nach 1734 bedeutet 17:35.
+- Funktioniert 100% offline. Laufende Aktivierungen übernehmen die erfassten QSOs automatisch.`,
+  },
+  {
+    id: 'activations',
+    title: 'SOTA, POTA & WWFF Aktivierungen',
+    category: 'Feldeinsatz',
+    summary: 'Offline-Gipfel- und Parklisten, Entfernungssuche und Aktivierungs-Fortschritt.',
+    content: `### Offline-Referenzlisten
+Lade offizielle Referenzdaten für SOTA, POTA und WWFF direkt und sicher über HTTPS in Tideline herunter:
+- **Offline durchsuchen:** Nach Referenz (z.B. DL/EW-001, K-1234, DLFF-0012), Name oder Region.
+- **Nächstgelegene Ziele:** Tideline berechnet Entfernung und Peilung ausgehend von deinem Maidenhead-Locator.
+
+### Live-Gültigkeitsfortschritt
+- Integrierter Zähler für die Mindest-QSO-Zahl zur Gültigkeit (z.B. 4/10 QSOs für SOTA, 10 für POTA).
+- Park-to-Park (P2P) und Summit-to-Summit (S2S) Tracking.
+- Speichert eigene und Partner-Referenzen zuverlässig für den ADIF-Export.`,
+  },
+  {
+    id: 'contest-mode',
+    title: 'Contest-Modus & Cabrillo-Export',
+    category: 'Contest',
+    summary: 'Tastatur-orientierte Schnelleingabe, Seriennummern, Dupe-Prüfung und MASTER.SCP.',
+    content: `### Contest-Funktionen
+- **Tastatur-Fokus:** Tab oder Leertaste springt durch die Felder, Enter loggt den Kontakt.
+- **Seriennummern-Generator:** Garantiert lückenlose, nicht wiederholte Nummern auch nach Neustarts.
+- **Dupe-Check & Super Check Partial:** Live-Prüfung gegen selbst importierte MASTER.SCP-Dateien.
+- **Live-Raten & Multiplikatoren:** 10- und 60-Minuten-QSO-Raten und Band-Multiplikatoren auf einen Blick.
+- **Export & Sync:** Erstelle Cabrillo-Dateien und synchronisiere Contest-Sessions mit Wavelog 3.2.0+.`,
+  },
+  {
+    id: 'field-mode',
+    title: '1-Klick-Feldmodus & Batteriesparer',
+    category: 'Ergonomie',
+    summary: 'Maximaler Kontrast, Handschuh-Touchziele, Display-Aktivhaltung und Batteriesparer.',
+    content: `### Sofortige Feldbereitschaft
+Unter **Einstellungen → Feldmodus** schaltet ein einziger Schalter:
+1. **Sonnenlicht-Thema:** Kompromissloser Schwarz-Weiß-Kontrast (≥ 7:1) für direkte Bergsonne.
+2. **Handschuh-Modus:** Vergrößerte 64dp Touch-Ziele mit weiten Abständen.
+3. **Display aktiv halten:** Verhindert das Abschalten des Bildschirms beim Loggen.
+4. **Batteriesparer:** Hält die Wellenanimation an, taktet die Uhr minütlich und schont den Akku.
+
+Alle vier Einstellungen können auch individuell justiert werden.`,
+  },
+  {
+    id: 'accounts',
+    title: 'Mehrere Wavelog-Accounts',
+    category: 'Konten & Sync',
+    summary: 'Verwalte mehrere Wavelog-Instanzen und Rufzeichen-Profile parallel.',
+    content: `### Multi-Account-Verwaltung
+Unter **Einstellungen → Wavelog-Accounts** kannst du mehrere Wavelog-Server oder Benutzer anlegen:
+- Unabhängig und sicher im Schlüsselspeicher abgelegte Token.
+- Schnelle Konten-Umschaltung direkt in der Kopfzeile des Logbuchs.
+- Synchronisation deckt alle Konten ab mit getrennter Warteschlangenanzeige.`,
   },
 ]
