@@ -26,7 +26,14 @@ Before you begin, ensure you have:
 5. Tap **Connect & Verify**.
 
 ### 3. Station Profile Selection
-Tideline queries your station profiles from Wavelog. Select your primary portable station profile (e.g. \`Portable /P\`, \`SOTA Mountain\`, or \`Home Shack\`). All logged QSOs will inherit this station ID.`,
+Tideline queries your station profiles from Wavelog. Select your primary portable station profile (e.g. \`Portable /P\`, \`SOTA Mountain\`, or \`Home Shack\`). All logged QSOs will inherit this station ID.
+
+### No Wavelog Yet? Try Built-in Demo Mode
+If you want to evaluate Tideline immediately without connecting to a live Wavelog server, tap **"Try the demo (no Wavelog needed)"** on the Welcome screen:
+- Instantly provisions an isolated mock station profile (\`DL0DEMO\`) running 100% on-device.
+- Zero network connection required.
+- Explore standard logging, Fast Log Entry, contest mode, and SOTA/POTA activation workflows.
+- Switch to your real Wavelog account anytime under **Settings → Wavelog accounts**.`,
   },
   {
     id: 'api-token',
@@ -59,7 +66,7 @@ When operating portable on a summit (SOTA), park (POTA), or field day:
 1. **Enter Callsign:** Type the callsign (e.g., \`DL1ABC\`). Tideline instantly calculates the DXCC entity and ITU/CQ zone locally with zero latency.
 2. **Frequency & Mode:** Select band and mode from one-tap quick chips or keyboard shortcuts.
 3. **Signal Reports:** Sent and received RST default to 59 / 599 and can be adjusted with quick toggles.
-4. **Instant Commit:** Hit Enter or tap **Log Contact**. The contact is saved immediately to the encrypted SQLite database and timestamped in UTC.
+4. **Instant Commit:** Hit Enter or tap **Log Contact**. The contact is saved immediately to the local SQLite journal (protected by OS hardware full-disk encryption) and timestamped in UTC.
 
 ### Automatic Worked-Before Detection
 Tideline warns you instantly if you have already logged this station on the current band or mode, preventing accidental duplicate contacts during field activations.`,
@@ -203,7 +210,14 @@ Bevor du startest, stelle sicher, dass du hast:
 5. Tippe auf **Verbindung testen**.
 
 ### 3. Stationsprofil auswählen
-Tideline lädt deine Stationsprofile von Wavelog. Wähle dein gewünschtes Profil für Portabeleinsätze aus (z.B. \`/P Portabel\`, \`SOTA Bergfunk\` oder \`Home Shack\`).`,
+Tideline lädt deine Stationsprofile von Wavelog. Wähle dein gewünschtes Profil für Portabeleinsätze aus (z.B. \`/P Portabel\`, \`SOTA Bergfunk\` oder \`Home Shack\`).
+
+### Noch kein Wavelog? Integrierter Demo-Modus
+Wenn du Tideline sofort unverbindlich ausprobieren möchtest, ohne erst eine Wavelog-Instanz aufzusetzen, tippe im Startbildschirm einfach auf **"Demo ausprobieren (ohne Wavelog)"**:
+- Richtet sofort eine isolierte Muster-Station (\`DL0DEMO\`) ein – 100% lokal auf deinem Gerät.
+- Keinerlei Internetverbindung oder Server erforderlich.
+- Teste alle Funktionen wie Standard-Logging, Fast Log Entry, Contest-Modus und SOTA/POTA-Aktivierungen.
+- Jederzeit unter **Einstellungen → Wavelog-Accounts** auf ein echtes Wavelog-Konto umschaltbar.`,
   },
   {
     id: 'api-token',
@@ -236,7 +250,7 @@ Beim Portabelbetrieb auf dem Berg (SOTA), im Park (POTA) oder beim Fieldday:
 1. **Rufzeichen eingeben:** Tippe das Rufzeichen ein (z.B. \`DL1ABC\`). Tideline ermittelt das DXCC-Land und die Zonen lokal in Millisekunden.
 2. **Band & Modus:** Wähle Band und Betriebsart bequem über Touch-Chips oder Tastaturkürzel.
 3. **Rapport:** Standardmäßig auf 59 / 599 voreingestellt, mit einem Fingertipp anpassbar.
-4. **Speichern:** Drücke Enter oder tippe auf **QSO loggen**. Der Kontakt wird sofort lokal verschlüsselt gespeichert und mit UTC-Zeit versehen.
+4. **Speichern:** Drücke Enter oder tippe auf **QSO loggen**. Der Kontakt wird sofort im lokalen SQLite-Journal (geschützt durch Betriebssystem-Hardwareverschlüsselung) gespeichert und mit UTC-Zeit versehen.
 
 ### Automatische Duplikats-Erkennung
 Tideline warnt dich sofort, wenn du diese Station bereits auf dem gleichen Band oder in derselben Betriebsart geloggt hast.`,
