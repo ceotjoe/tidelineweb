@@ -174,6 +174,8 @@ export const translations = {
       btnGithub: 'GitHub Releases (Windows & Linux)',
       btnWavelog: 'About Wavelog.org',
       starLabel: 'Star on GitHub',
+      testflightNote: 'Requires the free TestFlight app from Apple.',
+      testingNotice: 'Public testing releases · Official store versions follow with v1.0',
     },
     footer: {
       copyright: '© Tideline Project. Released under the MIT License.',
@@ -381,6 +383,8 @@ Die Tideline-App speichert alle Log-Daten lokal auf Ihrem Gerät (geschützt dur
       btnGithub: 'GitHub Releases (Windows & Linux)',
       btnWavelog: 'Mehr über Wavelog.org',
       starLabel: 'Stern auf GitHub vergeben',
+      testflightNote: 'Erfordert die kostenlose TestFlight-App von Apple.',
+      testingNotice: 'Öffentliche Testversionen · Reguläre Store-Releases folgen mit v1.0',
     },
     footer: {
       copyright: '© Tideline Projekt. Veröffentlicht unter der MIT-Lizenz.',

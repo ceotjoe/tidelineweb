@@ -10,7 +10,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
   const t = translations[lang].download
 
   return (
-    <section className="py-20 md:py-28 theme-transition">
+    <section id="download" className="py-20 md:py-28 theme-transition">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-[var(--bg-surface)] to-[var(--bg-surface-variant)] border-2 border-[var(--border-outline)]/40 shadow-2xl text-center space-y-8 relative overflow-hidden">
           {/* Subtle wave watermark decoration */}
@@ -34,13 +34,52 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
             </p>
           </div>
 
+          {/* Mobile & Tablet App Store Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-5 pt-2">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.ITWebService.tideline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-xl"
+              aria-label="Join on Google Play"
+            >
+              <img
+                src="/join-google-play.svg"
+                alt="Join the Android test release on Google Play"
+                width={240}
+                height={64}
+                className="h-14 sm:h-16 w-auto shadow-md rounded-xl hover:shadow-lg transition-shadow"
+              />
+            </a>
+
+            <a
+              href="https://testflight.apple.com/join/T8sejHVN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-xl"
+              aria-label="Join on TestFlight"
+            >
+              <img
+                src="/join-testflight.svg"
+                alt="Join the iPhone and iPad beta on TestFlight"
+                width={240}
+                height={64}
+                className="h-14 sm:h-16 w-auto shadow-md rounded-xl hover:shadow-lg transition-shadow"
+              />
+            </a>
+          </div>
+
+          <p className="text-xs text-[var(--text-secondary)] font-medium -mt-2">
+            {t.testflightNote} · {t.testingNotice}
+          </p>
+
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-1">
             <a
               href="https://github.com/ceotjoe/tideline/releases"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-4 rounded-2xl font-bold text-sm bg-[var(--color-primary)] text-[var(--color-primary-text)] hover:opacity-95 transition-all shadow-lg hover:shadow-xl flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)]"
+              className="px-7 py-3.5 rounded-2xl font-bold text-sm bg-[var(--color-primary)] text-[var(--color-primary-text)] hover:opacity-95 transition-all shadow-lg hover:shadow-xl flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)]"
             >
               <Github className="w-5 h-5" />
               <span>{t.btnGithub}</span>
@@ -50,7 +89,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
               href="https://github.com/ceotjoe/tideline/stargazers"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-4 rounded-2xl font-bold text-sm bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)] border-2 border-[var(--border-outline)]/40 transition-all shadow-sm flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)]"
+              className="px-6 py-3.5 rounded-2xl font-bold text-sm bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)] border-2 border-[var(--border-outline)]/40 transition-all shadow-sm flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)]"
             >
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
               <span>{t.starLabel}</span>
@@ -60,7 +99,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
               href="https://www.wavelog.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-4 rounded-2xl font-bold text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5"
+              className="px-6 py-3.5 rounded-2xl font-bold text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5"
             >
               <span>{t.btnWavelog}</span>
               <ExternalLink className="w-3.5 h-3.5" />
