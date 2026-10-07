@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Language, translations } from '../data/translations'
 import { X, Shield } from 'lucide-react'
 
@@ -6,6 +6,25 @@ interface LegalModalProps {
   type: 'impressum' | 'privacy' | null
   onClose: () => void
   lang: Language
+}
+
+const ObfuscatedEmail: React.FC = () => {
+  const [email, setEmail] = useState('')
+
+  useEffect(() => {
+    setEmail(atob('ZG8xaG96QGRhcmMuZGU='))
+  }, [])
+
+  if (!email) return null
+
+  return (
+    <a
+      href={`mailto:${email}`}
+      className="text-[var(--color-primary)] hover:underline font-medium focus:outline-none focus:ring-1 focus:ring-[var(--color-focus)] rounded"
+    >
+      {email}
+    </a>
+  )
 }
 
 export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose, lang }) => {
@@ -56,7 +75,15 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose, lang }) =
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-4 text-sm sm:text-base text-[var(--text-primary)] leading-relaxed whitespace-pre-line font-normal">
-          {content}
+          {content.includes('{{EMAIL}}') ? (
+            <>
+              {content.split('{{EMAIL}}')[0]}
+              <ObfuscatedEmail />
+              {content.split('{{EMAIL}}')[1]}
+            </>
+          ) : (
+            content
+          )}
         </div>
 
         {/* Modal Footer */}

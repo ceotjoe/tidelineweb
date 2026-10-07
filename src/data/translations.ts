@@ -190,7 +190,7 @@ export const translations = {
       impressumContent: `Angaben gemäß § 5 TMG / DDG:
 
 Jörg Holzapfel (DO1HOZ)
-E-Mail: do1hoz@darc.de
+E-Mail: {{EMAIL}}
 Web: https://tideline.holzapfel-online.de
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV / § 18 Abs. 2 MStV:
@@ -399,7 +399,7 @@ Die Tideline-App speichert alle Log-Daten lokal auf Ihrem Gerät (geschützt dur
       impressumContent: `Angaben gemäß § 5 TMG / DDG:
 
 Jörg Holzapfel (DO1HOZ)
-E-Mail: do1hoz@darc.de
+E-Mail: {{EMAIL}}
 Web: https://tideline.holzapfel-online.de
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV / § 18 Abs. 2 MStV:
