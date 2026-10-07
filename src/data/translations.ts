@@ -199,14 +199,103 @@ Jörg Holzapfel
 Haftungshinweis:
 Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.`,
       privacyTitle: 'Datenschutzerklärung (Privacy Policy)',
-      privacyContent: `1. Datenschutz auf einen Blick:
-Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Webseite erhebt keine personenbezogenen Tracking-Daten, verwendet keine Werbe-Cookies und bindet keine externen Tracking-Dienste ein.
+      privacyContent: `1. Privacy at a Glance
 
-2. Hosting & Server-Log-Dateien:
-Der Provider dieser Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (Browsertyp, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse in anonymisierter Form). Dies dient ausschließlich der technischen Betriebssicherheit.
+General Information
+The following notes provide a simple overview of what happens to your personal data when you visit this website or use the Tideline application. Personal data is any data that can be used to identify you personally.
 
-3. Die Tideline App:
-Die Tideline-App speichert alle Log-Daten lokal auf Ihrem Gerät (geschützt durch die Hardware-Verschlüsselung Ihres Betriebssystems und den Hardware-Schlüsselspeicher). Eine Übertragung erfolgt ausschließlich an die von Ihnen in den Einstellungen konfigurierte Wavelog-Instanz. Es gibt keine Telemetrie, keine Nutzungsstatistiken und keine Analyse-SDKs.`,
+Data Controller (Verantwortliche Stelle)
+The controller responsible for data processing on this website and in the Tideline app pursuant to the General Data Protection Regulation (GDPR / DSGVO) is:
+
+Jörg Holzapfel (DO1HOZ)
+Email: {{EMAIL}}
+Website: https://tideline.holzapfel-online.de
+(Please refer to the Impressum / Legal Notice on this website for further details.)
+
+
+2. Web Hosting & Infrastructure (Website)
+
+Hosting with STRATO
+This website is hosted on servers of STRATO AG, Otto-Ostrowski-Straße 7, 10249 Berlin, Germany (hereinafter: "STRATO").
+When you access this website, STRATO automatically collects technical data in server log files. For details, please consult STRATO's privacy policy: https://www.strato.de/datenschutz/.
+
+The use of STRATO is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the technically secure, rapid, and reliable provision of our website.
+
+Data Processing Agreement (AVV)
+We have concluded a Data Processing Agreement (Auftragsverarbeitungsvertrag, AVV) pursuant to Art. 28 GDPR with STRATO. This contract ensures that STRATO processes personal data of our visitors strictly in accordance with our instructions and in full compliance with the GDPR.
+
+Server Log Files
+The hosting provider automatically collects and stores technical information in server log files that your browser transmits automatically:
+• Browser type and browser version
+• Operating system used
+• Referrer URL (previously visited page)
+• Hostname of the accessing device
+• Time of the server request
+• IP address (anonymized by the hosting provider)
+
+This data is not combined with other data sources. Data processing is based on Art. 6(1)(f) GDPR (legitimate interest in the error-free delivery, security, and stability of the web service).
+
+
+3. Data Collection on this Website
+
+No Cookies and No Analytics
+This website uses no cookies, no tracking pixels, and no web analytics tools (such as Google Analytics or Matomo).
+
+No Third-Party CDNs or External Fonts
+All fonts, icons, and stylesheets are bundled and hosted locally on our web server. No connections to external third-party services (such as Google Fonts or external CDN providers) are established when visiting this website.
+
+Contact via Email
+If you contact us via email, your message including the personal data you provide (such as your name, email address, and inquiry content) is stored and processed for the purpose of handling your inquiry and potential follow-up questions. We do not transfer this data to third parties without your consent.
+
+The legal basis for processing is Art. 6(1)(b) GDPR if your inquiry is related to a contract or pre-contractual measures, and Art. 6(1)(f) GDPR (legitimate interest in processing user inquiries) in all other cases.
+
+Data will be retained until the purpose for storage ceases to apply (e.g. inquiry resolved) or you request deletion, unless statutory retention requirements apply.
+
+SSL / TLS Encryption
+For security reasons and to protect the transmission of data, this website uses SSL/TLS encryption. You can identify an encrypted connection by the "https://" prefix and the lock icon in your browser address bar.
+
+
+4. Data Protection in the "Tideline" App
+
+Offline-First Local Storage
+Tideline is an offline-first logging application for amateur radio operators:
+• All entered QSO records, callsigns, signal reports, frequencies, modes, timestamps, locators, and notes are stored strictly locally in an encrypted database on your device.
+• Sensitive credentials (such as API tokens for your Wavelog instance) are protected using your device operating system's hardware-backed credential storage (iOS Keychain, Android Keystore, Windows Credential Locker, macOS Keychain).
+• The maintainer of Tideline has no access to your logs, QSOs, or account credentials.
+
+Direct Synchronization with Wavelog
+When you configure and trigger synchronization, Tideline connects directly and exclusively between your client device and your chosen Wavelog server via the official Wavelog API v2:
+• Tideline does not operate intermediary relay servers, proxies, or central cloud sync services.
+• Data transmission is governed by the security configuration and privacy terms of your specific Wavelog host.
+
+No Telemetry, No Analytics, No Ads
+The Tideline application contains:
+• No tracking or usage analytics SDKs (e.g. no Google Analytics, Firebase, or similar)
+• No third-party crash reporting SDKs
+• No advertising libraries or marketing trackers
+• No background telemetry
+
+App Permissions
+The app requests only permissions necessary for its intended features:
+• Internet access: Exclusively to communicate directly with your configured Wavelog instance.
+• Location (optional): If you choose to enable GPS location to calculate your Maidenhead grid locator, the coordinates are processed solely in volatile local memory on-device and never transmitted to external servers.
+
+App Stores & Distribution
+Tideline is distributed via Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) and Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). When downloading or updating the application, the respective store provider processes your account and device telemetry according to their own privacy policies (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
+
+
+5. Your Rights as a Data Subject (GDPR)
+
+Under the GDPR, you have the following rights at any time regarding your personal data:
+• Right of Access (Art. 15 GDPR): Free information about your stored personal data, origin, recipient, and purpose.
+• Right to Rectification (Art. 16 GDPR): Immediate correction or completion of inaccurate data.
+• Right to Erasure (Art. 17 GDPR): Deletion of stored data unless statutory retention obligations apply.
+• Right to Restriction of Processing (Art. 18 GDPR): Restriction of data processing under statutory conditions.
+• Right to Data Portability (Art. 20 GDPR): Delivery of your data in a structured, commonly used, and machine-readable format.
+• Right to Object (Art. 21 GDPR): Right to object at any time to processing based on Art. 6(1)(e) or (f) GDPR on grounds relating to your particular situation.
+• Right to Lodge a Complaint (Art. 77 GDPR): Right to lodge a complaint with a competent data protection supervisory authority.
+
+To exercise your rights, please contact the controller using the email address indicated above.`,
       close: 'Close',
     },
   },
@@ -408,14 +497,103 @@ Jörg Holzapfel
 Haftungshinweis:
 Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.`,
       privacyTitle: 'Datenschutzerklärung',
-      privacyContent: `1. Datenschutz auf einen Blick:
-Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Webseite erhebt keine personenbezogenen Tracking-Daten, verwendet keine Werbe-Cookies und bindet keine externen Tracking-Dienste ein.
+      privacyContent: `1. Datenschutz auf einen Blick
 
-2. Hosting & Server-Log-Dateien:
-Der Provider dieser Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (Browsertyp, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse in anonymisierter Form). Dies dient ausschließlich der technischen Betriebssicherheit.
+Allgemeine Hinweise
+Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen oder die mobile/Desktop-App „Tideline“ nutzen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
 
-3. Die Tideline App:
-Die Tideline-App speichert alle Log-Daten lokal auf Ihrem Gerät (geschützt durch die Hardware-Verschlüsselung Ihres Betriebssystems und den Hardware-Schlüsselspeicher). Eine Übertragung erfolgt ausschließlich an die von Ihnen in den Einstellungen konfigurierte Wavelog-Instanz. Es gibt keine Telemetrie, keine Nutzungsstatistiken und keine Analyse-SDKs.`,
+Verantwortliche Stelle
+Verantwortlich für die Datenverarbeitung auf dieser Website und in der App im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+
+Jörg Holzapfel (DO1HOZ)
+E-Mail: {{EMAIL}}
+Website: https://tideline.holzapfel-online.de
+(Vollständige Angaben entnehmen Sie bitte dem Impressum dieser Website.)
+
+
+2. Webhosting & Infrastruktur (Website)
+
+Hosting bei STRATO
+Wir hosten unsere Website bei der STRATO AG, Otto-Ostrowski-Straße 7, 10249 Berlin (nachfolgend: „STRATO“).
+Wenn Sie unsere Website besuchen, erfasst STRATO technische Daten in Server-Log-Dateien, inklusive Ihrer IP-Adresse. Weitere Details entnehmen Sie der Datenschutzerklärung von STRATO unter: https://www.strato.de/datenschutz/.
+
+Die Nutzung von STRATO erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer technisch sicheren, schnellen und zuverlässigen Bereitstellung unserer Website.
+
+Auftragsverarbeitung (AVV)
+Wir haben einen Vertrag über Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO mit STRATO geschlossen. Dies ist ein gesetzlich vorgeschriebener Vertrag, der garantiert, dass STRATO die personenbezogenen Daten unserer Webseitenbesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.
+
+Server-Log-Dateien
+Der Provider der Seiten (STRATO) erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt:
+• Browsertyp und Browserversion
+• Verwendetes Betriebssystem
+• Referrer URL (die zuvor besuchte Seite)
+• Hostname des zugreifenden Rechners
+• Uhrzeit der Serveranfrage
+• IP-Adresse (in anonymisierter Form durch den Hoster)
+
+Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Systemsicherheit).
+
+
+3. Datenerfassung auf dieser Website
+
+Keine Cookies und keine Analyse-Tools
+Diese Website verwendet weder Cookies noch Tracking-Pixel oder Web-Analyse-Tools (wie Google Analytics oder Matomo).
+
+Keine externen Web-Fonts oder CDNs
+Alle Schriftarten, Icons und Stylesheets sind lokal auf unserem Server bzw. im Anwendungspaket eingebunden. Es werden keine Verbindungen zu externen Servern Dritter (wie Google Fonts oder externen CDN-Diensten) hergestellt.
+
+Kontaktaufnahme per E-Mail
+Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, E-Mail-Adresse, Inhalt der Nachricht) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+
+Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).
+
+Die von Ihnen per E-Mail übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Gesetzliche Aufbewahrungsfristen bleiben unberührt.
+
+SSL- bzw. TLS-Verschlüsselung
+Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Präfix „https://“ und dem Schloss-Symbol in der Adresszeile Ihres Browsers.
+
+
+4. Datenschutz in der App „Tideline“
+
+Lokale Datenspeicherung (Offline-First)
+Die App „Tideline“ ist ein Offline-First-Logging-Programm für Funkamateure:
+• Sämtliche erfassten QSO-Daten, Rufzeichen, Rapporte, Frequenzen, Betriebsarten, Zeitstempel, Grid-Locators und Notizen werden ausschließlich lokal in einer verschlüsselten Datenbank auf Ihrem Endgerät gespeichert.
+• Sensible Zugangsdaten (wie API-Tokens für Ihre Wavelog-Instanz) werden sicher im Hardware-Schlüsselspeicher Ihres Betriebssystems abgelegt (iOS Keychain, Android Keystore, Windows Credential Locker, macOS Keychain).
+• Der Betreiber von Tideline hat zu keinem Zeitpunkt Zugriff auf Ihre lokalen Logbuchdaten oder Zugangsdaten.
+
+Direkte Synchronisation mit Wavelog
+Wenn Sie die Synchronisationsfunktion nutzen, verbindet sich die Tideline-App ausschließlich und direkt zwischen Ihrem Endgerät und dem von Ihnen konfigurierten Wavelog-Server über die Wavelog API v2:
+• Tideline betreibt keine zwischengeschalteten Relay-, Proxy- oder Cloud-Synchronisationsserver.
+• Die Datenübertragung unterliegt den Datenschutzbestimmungen und Sicherheitsmaßnahmen der von Ihnen gewählten Wavelog-Instanz.
+
+Keine Telemetrie, keine Analyse-Tools, keine Werbung
+Die Tideline-App enthält:
+• Keine Tracking- oder Analyse-Frameworks (z. B. kein Google Analytics, kein Firebase)
+• Keine Absturzberichts-Dienste (Crashlytics o. ä.) von Drittanbietern
+• Keine Werbenetzwerke oder Werbe-SDKs
+• Keine Telemetrie- oder Nutzungsstatistiken
+
+App-Berechtigungen
+Die App fordert ausschließlich Berechtigungen an, die für ihre Kernfunktionen zwingend notwendig sind:
+• Netzwerkzugriff: Ausschließlich zur direkten Kommunikation mit Ihrer Wavelog-Instanz.
+• Standort (optional): Sofern Sie die GPS-Standortermittlung zur automatischen Berechnung Ihres Maidenhead-Grid-Locators aktivieren, werden die Koordinaten rein flüchtig im lokalen Arbeitsspeicher Ihres Geräts verarbeitet und niemals an Dritte oder den Entwickler übertragen.
+
+App-Stores & Vertrieb
+Die App wird über den Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) und den Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) bereitgestellt. Beim Herunterladen der App verarbeiten die Plattformbetreiber personenbezogene Daten gemäß ihren eigenen Bestimmungen (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
+
+
+5. Ihre Rechte als betroffene Person (Betroffenenrechte)
+
+Nach der Datenschutz-Grundverordnung (DSGVO) stehen Ihnen folgende Rechte zu:
+• Recht auf Auskunft (Art. 15 DSGVO): Unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten.
+• Recht auf Berichtigung (Art. 16 DSGVO): Berichtigung unrichtiger oder Vervollständigung Ihrer Daten.
+• Recht auf Löschung (Art. 17 DSGVO): Löschung Ihrer bei uns gespeicherten personenbezogenen Daten, soweit dem keine gesetzlichen Pflichten entgegenstehen.
+• Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Einschränkung der Verarbeitung Ihrer Daten im Rahmen der gesetzlichen Vorgaben.
+• Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Bereitstellung Ihrer Daten in einem gängigen, maschinenlesbaren Format.
+• Widerspruchsrecht (Art. 21 DSGVO): Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Widerspruch einzulegen, sofern diese auf Art. 6 Abs. 1 lit. e oder f DSGVO beruht.
+• Beschwerderecht (Art. 77 DSGVO): Recht auf Beschwerde bei einer zuständigen Datenschutz-Aufsichtsbehörde.
+
+Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die oben angegebene verantwortliche Stelle.`,
       close: 'Schließen',
     },
   },

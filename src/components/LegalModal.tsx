@@ -75,15 +75,14 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose, lang }) =
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-4 text-sm sm:text-base text-[var(--text-primary)] leading-relaxed whitespace-pre-line font-normal">
-          {content.includes('{{EMAIL}}') ? (
-            <>
-              {content.split('{{EMAIL}}')[0]}
-              <ObfuscatedEmail />
-              {content.split('{{EMAIL}}')[1]}
-            </>
-          ) : (
-            content
-          )}
+          {content.includes('{{EMAIL}}')
+            ? content.split('{{EMAIL}}').map((part, index, arr) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index < arr.length - 1 && <ObfuscatedEmail />}
+                </React.Fragment>
+              ))
+            : content}
         </div>
 
         {/* Modal Footer */}
