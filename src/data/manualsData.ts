@@ -64,9 +64,9 @@ Tideline adheres strictly to least-privilege security:
     content: `### Offline-First Workflow
 When operating portable on a summit (SOTA), park (POTA), or field day:
 1. **Enter Callsign:** Type the callsign (e.g., \`DL1ABC\`). Tideline instantly calculates the DXCC entity and ITU/CQ zone locally with zero latency.
-2. **Frequency & Mode:** Select band and mode from one-tap quick chips or keyboard shortcuts.
-3. **Signal Reports:** Sent and received RST default to 59 / 599 and can be adjusted with quick toggles.
-4. **Instant Commit:** Hit Enter or tap **Log Contact**. The contact is saved immediately to the local SQLite journal (protected by OS hardware full-disk encryption) and timestamped in UTC.
+2. **Smart Frequency & Mode:** Select band and mode, or type a frequency directly. Whole numbers land automatically in the matching amateur band (\`7\`, \`50\`, \`144\` as MHz; \`14205\`, \`1840\`, \`472\`, \`136\` as kHz) with a live readout underneath.
+3. **Rapid Date & Time Dialog:** Time runs live in UTC. Choose **Change time** to open a single dialog for date (\`YYYY-MM-DD\`) and time (\`HH:MM\`). Because the date is pre-selected, type over it immediately — after the eighth digit, the cursor jumps to the time field and **Enter** sets it.
+4. **Instant Commit:** Hit Enter or tap **Log QSO**. The contact is saved immediately to the local SQLite database (protected by OS storage security) and timestamped in UTC.
 
 ### Automatic Worked-Before Detection
 Tideline warns you instantly if you have already logged this station on the current band or mode, preventing accidental duplicate contacts during field activations.`,
@@ -188,6 +188,38 @@ Under **Settings → Wavelog accounts**, you can add, rename, or switch between 
 - Quick account switcher directly in the log screen header.
 - Sync covers all configured accounts, with waiting queues tracked per account.`,
   },
+  {
+    id: 'free-space',
+    title: 'Free Up Space & Update from Wavelog',
+    category: 'Accounts & Sync',
+    summary: 'Remove local copies of confirmed QSOs and refresh edited contacts from Wavelog.',
+    content: `### Remove Synced QSOs from This Device
+Under **Settings → Wavelog accounts → Remove synced QSOs from this device**, you can free up local storage without deleting anything on Wavelog:
+1. Choose an age threshold (older than 1, 2, or 5 years, or all synced QSOs).
+2. Tap **Check with Wavelog** — Tideline verifies which QSOs are safely stored on your server.
+3. Choose **Export, then remove** (saves an ADIF copy first) or remove directly. Worked-before hints and your callsign directory keep everything they learned.
+
+### Update from Wavelog
+If you edited a synced QSO directly in Wavelog (for example its time or mode), its server copy differs from the local copy. Open the QSO in Tideline and choose **Update from Wavelog** to replace the local copy with Wavelog's version (read-only towards Wavelog), allowing it to be removed cleanly from the device afterward.`,
+  },
+  {
+    id: 'desktop',
+    title: 'Mac, Windows, Linux & Raspberry Pi',
+    category: 'Platforms',
+    summary: 'Desktop navigation, menu bars, and Linux x86-64 / Raspberry Pi ARM64 setup.',
+    content: `### Desktop Navigation
+On macOS, Windows, and Linux, Tideline behaves like a native desktop application:
+- **Sidebar:** Log, Callsigns, Sync, and Settings live in a persistent left sidebar.
+- **Menu Bar:** **Go**, **Operate**, and **Help** menus with keyboard shortcuts and context-aware commands.
+- **Context Menu:** Right-click any QSO row for **Open QSO** or **Copy callsign**.
+
+### Linux & Raspberry Pi 4 / 5 (Experimental)
+GitHub releases include builds for **x86-64 PCs** and **64-bit ARM (\`linux-arm64\`)** for Raspberry Pi 4 and 5 running 64-bit Raspberry Pi OS with desktop:
+\`\`\`
+sudo apt install libgtk-3-0 libsecret-1-0 gnome-keyring
+\`\`\`
+Tideline stores your Wavelog token strictly in the system keyring. If no secret service is running (such as on Raspberry Pi OS Lite without a desktop session), Tideline explains the cause at startup and leaves your log untouched.`,
+  },
 ]
 
 export const MANUALS_DE: ManualItem[] = [
@@ -248,9 +280,9 @@ Tideline folgt dem Prinzip der minimalen Rechtevergabe (Least Privilege):
     content: `### Der Offline-Ablauf
 Beim Portabelbetrieb auf dem Berg (SOTA), im Park (POTA) oder beim Fieldday:
 1. **Rufzeichen eingeben:** Tippe das Rufzeichen ein (z.B. \`DL1ABC\`). Tideline ermittelt das DXCC-Land und die Zonen lokal in Millisekunden.
-2. **Band & Modus:** Wähle Band und Betriebsart bequem über Touch-Chips oder Tastaturkürzel.
-3. **Rapport:** Standardmäßig auf 59 / 599 voreingestellt, mit einem Fingertipp anpassbar.
-4. **Speichern:** Drücke Enter oder tippe auf **QSO loggen**. Der Kontakt wird sofort im lokalen SQLite-Journal (geschützt durch Betriebssystem-Hardwareverschlüsselung) gespeichert und mit UTC-Zeit versehen.
+2. **Intelligente Frequenz- & Bandwahl:** Wähle Band und Betriebsart oder tippe direkt eine Frequenz ein. Ganze Zahlen landen automatisch im passenden Amateurfunkband (\`7\`, \`50\`, \`144\` als MHz; \`14205\`, \`1840\`, \`472\`, \`136\` als kHz).
+3. **Schneller Datum-/Zeit-Dialog:** Die Uhrzeit läuft live in UTC. Über **Zeit ändern** öffnet sich ein kombinierter Dialog für Datum (\`JJJJ-MM-TT\`) und Uhrzeit (\`SS:MM\`). Nach der achten Ziffer springt der Cursor automatisch zur Uhrzeit und **Enter** übernimmt den Wert.
+4. **Speichern:** Drücke Enter oder tippe auf **QSO loggen**. Der Kontakt wird sofort in der lokalen SQLite-Datenbank (geschützt durch das Betriebssystem) gespeichert und mit UTC-Zeit versehen.
 
 ### Automatische Duplikats-Erkennung
 Tideline warnt dich sofort, wenn du diese Station bereits auf dem gleichen Band oder in derselben Betriebsart geloggt hast.`,
@@ -370,5 +402,37 @@ Unter **Einstellungen → Wavelog-Accounts** kannst du mehrere Wavelog-Server od
 - Unabhängig und sicher im Schlüsselspeicher abgelegte Token.
 - Schnelle Konten-Umschaltung direkt in der Kopfzeile des Logbuchs.
 - Synchronisation deckt alle Konten ab mit getrennter Warteschlangenanzeige.`,
+  },
+  {
+    id: 'free-space',
+    title: 'Speicher freigeben & Von Wavelog aktualisieren',
+    category: 'Konten & Sync',
+    summary: 'Lokale Kopien bestätigter QSOs entfernen und geänderte QSOs von Wavelog abgleichen.',
+    content: `### Synchronisierte QSOs lokal entfernen
+Unter **Einstellungen → Wavelog-Konten → Synchronisierte QSOs von diesem Gerät entfernen** kannst du lokalen Speicherplatz freigeben, ohne dass auf Wavelog etwas gelöscht wird:
+1. Wähle den Zeitraum (älter als 1, 2 oder 5 Jahre oder alle synchronisierten QSOs).
+2. Tippe auf **Bei Wavelog prüfen** – Tideline gleicht ab, welche QSOs sicher auf deinem Server liegen.
+3. Wähle **Exportieren, dann entfernen** (legt vorab eine ADIF-Datei an) oder entferne direkt. „Schon gearbeitet“-Hinweise und das Rufzeichenverzeichnis bleiben vollständig erhalten.
+
+### Von Wavelog aktualisieren
+Hast du ein synchronisiertes QSO direkt in Wavelog geändert (z.B. die Uhrzeit), weicht die Server-Kopie von der lokalen ab. Öffne das QSO in Tideline und wähle **Von Wavelog aktualisieren**, um die lokale Kopie durch die Wavelog-Version zu ersetzen – danach funktioniert auch das lokale Entfernen wieder.`,
+  },
+  {
+    id: 'desktop',
+    title: 'Mac, Windows, Linux & Raspberry Pi',
+    category: 'Plattformen',
+    summary: 'Desktop-Navigation, Menüleiste und Linux x86-64 / Raspberry Pi ARM64.',
+    content: `### Desktop-Bedienung
+Auf macOS, Windows und Linux arbeitet Tideline wie ein klassisches Desktop-Programm:
+- **Seitenleiste:** Log, Rufzeichen, Sync und Einstellungen stehen dauerhaft links in einer Seitenleiste.
+- **Menüleiste:** Menüs **Gehe zu**, **Betrieb** und **Hilfe** mit allen Tastenkürzeln.
+- **Rechtsklick:** Rechtsklick auf ein QSO im Log bietet **QSO öffnen** und **Rufzeichen kopieren**.
+
+### Linux & Raspberry Pi 4 / 5 (Experimentell)
+Auf GitHub stehen Builds für **x86-64-PCs** sowie **64-Bit-ARM (\`linux-arm64\`)** für Raspberry Pi 4 und 5 (mit 64-Bit Raspberry Pi OS Desktop) bereit:
+\`\`\`
+sudo apt install libgtk-3-0 libsecret-1-0 gnome-keyring
+\`\`\`
+Tideline speichert dein Wavelog-Token ausschließlich im System-Schlüsselbund. Fehlt ein laufender Secret-Service (z.B. unter Raspberry Pi OS Lite ohne Desktop-Sitzung), nennt Tideline beim Start klar die Ursache und lässt dein Logbuch unangetastet.`,
   },
 ]

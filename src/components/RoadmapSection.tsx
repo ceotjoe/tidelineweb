@@ -1,6 +1,6 @@
 import React from 'react'
 import { Language, translations } from '../data/translations'
-import { CheckCircle2, Sparkles, Clock } from 'lucide-react'
+import { CheckCircle2, Sparkles } from 'lucide-react'
 
 interface RoadmapSectionProps {
   lang: Language
@@ -54,17 +54,25 @@ export const RoadmapSection: React.FC<RoadmapSectionProps> = ({ lang }) => {
       milestone: t.m6.version,
       status: t.m6.status,
       desc: t.m6.desc,
-      isCurrent: true,
-      badgeColor: 'bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-500/40',
-      icon: <Sparkles className="w-4 h-4 text-[var(--color-primary)] animate-pulse" />,
+      isDone: true,
+      badgeColor: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
+    },
+    {
+      milestone: t.m7.version,
+      status: t.m7.status,
+      desc: t.m7.desc,
+      isDone: true,
+      badgeColor: 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30',
+      icon: <CheckCircle2 className="w-4 h-4 text-emerald-500" />,
     },
     {
       milestone: t.v1.version,
       status: t.v1.status,
       desc: t.v1.desc,
-      isDone: false,
-      badgeColor: 'bg-[var(--bg-surface-variant)] text-[var(--text-secondary)] border-[var(--border-outline)]/40',
-      icon: <Clock className="w-4 h-4 text-[var(--text-secondary)]" />,
+      isCurrent: true,
+      badgeColor: 'bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-500/40',
+      icon: <Sparkles className="w-4 h-4 text-[var(--color-primary)] animate-pulse" />,
     },
   ]
 

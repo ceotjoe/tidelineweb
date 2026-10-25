@@ -109,7 +109,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ lang }) => {
           {/* Supported platform tags */}
           <div className="pt-6 border-t border-[var(--border-outline)]/20 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-[var(--text-secondary)]">
             <span>Platforms:</span>
-            {['iOS', 'iPadOS', 'Android', 'macOS', 'Windows', 'Linux'].map((p) => (
+            {['iOS', 'iPadOS', 'Android', 'macOS', 'Windows', 'Linux (x64 & ARM64)'].map((p) => (
               <span
                 key={p}
                 className="px-2.5 py-1 rounded-md bg-[var(--bg-surface)] border border-[var(--border-outline)]/30"

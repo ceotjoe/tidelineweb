@@ -15,15 +15,16 @@ export const translations = {
       themePicker: 'Theme',
     },
     hero: {
-      badge: 'Open Source · Cross-Platform · Wavelog API v2 · v0.6.0',
+      badge: 'Open Source · Cross-Platform · Wavelog API v2 · v1.0.0',
       titleLine1: 'Logging in the wild.',
       titleLine2: 'Synced when you are home.',
       description:
         'Tideline is an offline-first amateur radio QSO logger for iOS, iPadOS, Android, macOS, Windows and Linux. Built for summits, parks, field days, and contests — reliably synced to your own Wavelog instance whenever you reconnect.',
-      ctaPrimary: 'Explore v0.6.0 on GitHub',
+      ctaPrimary: 'Explore v1.0.0 on GitHub',
       ctaSecondary: 'Read the Manual',
       ctaRoadmap: 'View Roadmap',
-      statusNote: 'Status: Version 0.6.0 released. Includes built-in offline demo mode, smart sync debouncing, Fast Log Entry, SOTA/POTA activations, and hardware-secured privacy.',
+      statusNote:
+        'Status: Version 1.0.0 (first stable release) is out! Includes offline demo mode, Update from Wavelog, rapid date/time entry, Fast Log Entry, SOTA/POTA/WWFF activations, Contest Mode, and Raspberry Pi ARM64 support.',
     },
     mockup: {
       title: 'Tideline Logger',
@@ -86,7 +87,7 @@ export const translations = {
       },
       card2: {
         title: 'Sync You Can Trust & Multi-Account',
-        desc: 'Every QSO reports its exact state: local, queued, uploading, synced, or conflict. Features smart sync debouncing, automatic backoff, and multi-account support.',
+        desc: 'Every QSO reports its exact state: local, queued, uploading, verifying, synced, or conflict. Features smart sync debouncing, "Update from Wavelog", safe local space eviction, and multi-account support.',
         tag: 'Zero Data Loss',
       },
       card3: {
@@ -100,8 +101,8 @@ export const translations = {
         tag: 'Competition Tested',
       },
       crossPlatform: {
-        title: 'One Clean Codebase, Six Desktop & Mobile Targets',
-        desc: 'Crafted in Flutter with a clean layered architecture for iOS, iPadOS, Android, macOS, Windows, and Linux.',
+        title: 'One Clean Codebase Across Mobile, Desktop & Raspberry Pi',
+        desc: 'Crafted in Flutter with a clean layered architecture for iOS, iPadOS, Android, macOS, Windows, and Linux (x86-64 & ARM64 for Raspberry Pi 4/5).',
       },
     },
     syncEngine: {
@@ -111,7 +112,7 @@ export const translations = {
         'Tideline connects to your self-hosted Wavelog instance through its official API v2, using least-privilege tokens and smart idempotency checks.',
       step1Title: '1. In the Field (Completely Offline)',
       step1Desc:
-        'QSOs are written to the local SQLite journal protected by OS hardware encryption, with UUIDs, UTC timestamps, and initial status "local" or "queued".',
+        'QSOs are written immediately to the local SQLite database protected by OS storage security, with UUIDs, UTC timestamps, and initial status "local" or "queued".',
       step2Title: '2. Connection Regained (Smart Debounced Sync)',
       step2Desc:
         'When network returns, Tideline debounces rapid connection changes and runs a lightweight reachability probe, checking contacts against Wavelog.',
@@ -121,7 +122,7 @@ export const translations = {
     },
     roadmap: {
       sectionBadge: 'Development Milestones',
-      title: 'From Concept to Version 0.6.0 & Beyond',
+      title: 'From Concept to Version 1.0.0 & Beyond',
       subtitle:
         'Tideline follows a phased, test-driven roadmap. Every milestone is validated against automated mock server test suites.',
       m1: {
@@ -132,7 +133,7 @@ export const translations = {
       m2: {
         version: 'M2: MVP (v0.1)',
         status: 'Completed',
-        desc: 'Core QSO logging, transparent sync queue & journal, offline DXCC lookups, ADIF export/import, encrypted backups, EN/DE localization.',
+        desc: 'Core QSO logging, transparent sync queue & journal, offline DXCC lookups, ADIF export/import, backups, EN/DE localization.',
       },
       m3: {
         version: 'M3: Contest Mode (v0.2)',
@@ -150,14 +151,19 @@ export const translations = {
         desc: 'Fast Log Entry (FLE) shorthand parsing, one-switch field mode with battery saver, multiple Wavelog accounts, callsign directory, and desktop navigation.',
       },
       m6: {
-        version: 'M6: In-App Demo & Architecture (v0.6.0)',
-        status: 'Released (v0.6.0)',
-        desc: 'Zero-config offline demo mode, automated multi-platform release pipelines, smart sync debouncing/throttling, and streamlined OS-hardware secure storage (ADR 0034).',
+        version: 'M6: In-App Demo, Sync & OS Storage (v0.5–v0.6)',
+        status: 'Completed',
+        desc: 'Zero-config offline demo mode, automated multi-platform release pipelines, smart sync debouncing/throttling, and streamlined OS-protected plain storage (ADR 0034).',
+      },
+      m7: {
+        version: 'M7: Wavelog QSO Refresh & Raspberry Pi ARM64 (v0.7)',
+        status: 'Completed',
+        desc: '"Update from Wavelog" for modified synced QSOs (ADR 0035), unified single-dialog date/time entry, experimental Linux ARM64 builds for Raspberry Pi 4 & 5, and clear system keyring checks.',
       },
       v1: {
-        version: 'v1.0: Store Listings & Public Launch',
-        status: 'In Preparation',
-        desc: 'Final polishes, Google Play Store and Apple App Store public releases, and community documentation.',
+        version: 'v1.0.0: First Stable Release',
+        status: 'Released (v1.0.0)',
+        desc: 'First stable release after comprehensive verification across data safety, field ergonomics, WCAG 2.2 accessibility, platforms, and EN/DE localization. Next up: store listings, device-to-device LAN sync, and WSJT-X desktop listener.',
       },
     },
     manuals: {
@@ -168,14 +174,14 @@ export const translations = {
       readFullButton: 'View Full Guide on GitHub',
     },
     download: {
-      title: 'Download Tideline v0.6.0',
+      title: 'Download Tideline v1.0.0',
       subtitle:
-        'Tideline 0.6.0 is available now. Download standalone packages for Windows and Linux on GitHub, join the iOS and macOS TestFlight beta, or test the Android build via Google Play.',
-      btnGithub: 'GitHub Releases (Windows & Linux)',
+        'Tideline 1.0.0 — the first stable release — is available now. Download standalone packages for Windows and Linux (x86-64 & Raspberry Pi ARM64) on GitHub, join the iOS, iPadOS and macOS TestFlight, or test the Android build via Google Play.',
+      btnGithub: 'GitHub Releases (Windows & Linux x64/ARM64)',
       btnWavelog: 'About Wavelog.org',
       starLabel: 'Star on GitHub',
       testflightNote: 'Requires the free TestFlight app from Apple.',
-      testingNotice: 'Public testing releases · Official store versions follow with v1.0',
+      testingNotice: 'v1.0.0 Stable Release · Public TestFlight & Google Play tracks active',
     },
     footer: {
       copyright: '© Tideline Project. Released under the MIT License.',
@@ -257,16 +263,17 @@ For security reasons and to protect the transmission of data, this website uses 
 
 4. Data Protection in the "Tideline" App
 
-Offline-First Local Storage
+Offline-First Local Storage & OS Protection (ADR 0034)
 Tideline is an offline-first logging application for amateur radio operators:
-• All entered QSO records, callsigns, signal reports, frequencies, modes, timestamps, locators, and notes are stored strictly locally in an encrypted database on your device.
-• Sensitive credentials (such as API tokens for your Wavelog instance) are protected using your device operating system's hardware-backed credential storage (iOS Keychain, Android Keystore, Windows Credential Locker, macOS Keychain).
+• All entered QSO records, callsigns, signal reports, frequencies, modes, timestamps, locators, callsign directory entries, and notes are stored strictly locally in a plain SQLite database on your device.
+• Tideline does not apply custom app-level encryption (ITSAppUsesNonExemptEncryption is false). On-device data at rest is protected by your operating system's storage security and device lock screen, and excluded from automatic cloud backups (iCloud, iTunes, Google cloud backup). Exported ADIF, Cabrillo, and .tlbackup files are plain files saved only where you choose.
+• Sensitive credentials (API tokens for your Wavelog instance) are stored exclusively in your operating system's secure store (iOS/macOS Keychain, Android Keystore, Windows protected storage, Linux Secret Service / Keyring) and are never included in backups or exports.
 • The maintainer of Tideline has no access to your logs, QSOs, or account credentials.
 
-Direct Synchronization with Wavelog
-When you configure and trigger synchronization, Tideline connects directly and exclusively between your client device and your chosen Wavelog server via the official Wavelog API v2:
-• Tideline does not operate intermediary relay servers, proxies, or central cloud sync services.
-• Data transmission is governed by the security configuration and privacy terms of your specific Wavelog host.
+Direct Synchronization with Wavelog & Reference Downloads
+• Wavelog Sync: When you configure and trigger synchronization, Tideline connects directly and exclusively between your client device and your chosen Wavelog server(s) via the official Wavelog API v2. Tideline does not operate intermediary relay servers, proxies, or central cloud sync services.
+• Reference Lists (User-Initiated Only): Only when you actively press "Download" or "Update" in Settings, Tideline fetches public reference files over HTTPS (MASTER.SCP from supercheckpartial.com, SOTA summits from sotadata.org.uk / storage.sota.org.uk, POTA parks from pota.app, WWFF directory from wwff.co) using a generic Tideline/<version> user-agent without transmitting any personal or log data.
+• Built-in Demo Mode: The built-in demo account on the Welcome screen runs 100% inside the app and makes no network connections.
 
 No Telemetry, No Analytics, No Ads
 The Tideline application contains:
@@ -277,11 +284,12 @@ The Tideline application contains:
 
 App Permissions
 The app requests only permissions necessary for its intended features:
-• Internet access: Exclusively to communicate directly with your configured Wavelog instance.
-• Location (optional): If you choose to enable GPS location to calculate your Maidenhead grid locator, the coordinates are processed solely in volatile local memory on-device and never transmitted to external servers.
+• Internet / Local network access: Exclusively to communicate with your configured Wavelog instance(s) (including on your LAN) and to download reference lists when requested by you.
+• Biometrics (optional): Used solely for the optional app lock, evaluated strictly by the operating system. Tideline never sees biometric data.
+• Location & Camera: Not used. Tideline never requests GPS location or camera access; you enter your Maidenhead grid locator manually or from a chosen reference.
 
 App Stores & Distribution
-Tideline is distributed via Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) and Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). When downloading or updating the application, the respective store provider processes your account and device telemetry according to their own privacy policies (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
+Tideline is distributed via Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA), Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), and GitHub Releases. When downloading or updating the application, the respective platform provider processes your account and device data according to their own privacy policies (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
 
 
 5. Your Rights as a Data Subject (GDPR)
@@ -297,6 +305,7 @@ Under the GDPR, you have the following rights at any time regarding your persona
 
 To exercise your rights, please contact the controller using the email address indicated above.`,
       close: 'Close',
+      backToHome: 'Back to Homepage',
     },
   },
   de: {
@@ -313,15 +322,16 @@ To exercise your rights, please contact the controller using the email address i
       themePicker: 'Design',
     },
     hero: {
-      badge: 'Open Source · Plattformübergreifend · Wavelog API v2 · v0.6.0',
+      badge: 'Open Source · Plattformübergreifend · Wavelog API v2 · v1.0.0',
       titleLine1: 'Funken im Gelände.',
       titleLine2: 'Synchronisiert zu Hause.',
       description:
         'Tideline ist ein Offline-first Amateurfunk-QSO-Logger für iOS, iPadOS, Android, macOS, Windows und Linux. Entwickelt für Berggipfel, Parks, Fielddays und Contests – zuverlässig mit deiner eigenen Wavelog-Instanz synchronisiert, sobald du wieder Empfang hast.',
-      ctaPrimary: 'v0.6.0 auf GitHub ansehen',
+      ctaPrimary: 'v1.0.0 auf GitHub ansehen',
       ctaSecondary: 'Handbuch lesen',
       ctaRoadmap: 'Roadmap ansehen',
-      statusNote: 'Status: Version 0.6.0 veröffentlicht. Enthält integrierten Offline-Demomodus, intelligentes Sync-Debouncing, Fast Log Entry, SOTA/POTA-Aktivierungen und hardwarebasierte Sicherheit.',
+      statusNote:
+        'Status: Version 1.0.0 (erstes stabiles Release) veröffentlicht! Mit Offline-Demomodus, „Von Wavelog aktualisieren“, schneller Datum-/Zeiteingabe, Fast Log Entry, SOTA/POTA/WWFF, Contest-Modus und Raspberry-Pi-ARM64-Support.',
     },
     mockup: {
       title: 'Tideline Logger',
@@ -384,7 +394,7 @@ To exercise your rights, please contact the controller using the email address i
       },
       card2: {
         title: 'Synchronisation & Multi-Account',
-        desc: 'Jedes QSO zeigt seinen exakten Status: lokal, wartend, sendend, synchronisiert oder Konflikt. Intelligentes Sync-Debouncing, automatischer Backoff und Multi-Account-Unterstützung.',
+        desc: 'Jedes QSO zeigt seinen exakten Status: lokal, wartend, sendend, prüfend, synchronisiert oder Konflikt. Mit Sync-Debouncing, „Von Wavelog aktualisieren“, lokalem Speicher-Freigeben und Multi-Account-Unterstützung.',
         tag: 'Kein Datenverlust',
       },
       card3: {
@@ -398,8 +408,8 @@ To exercise your rights, please contact the controller using the email address i
         tag: 'Wettkampferprobt',
       },
       crossPlatform: {
-        title: 'Eine Codebasis für sechs Desktop- und Mobil-Plattformen',
-        desc: 'Entwickelt mit Flutter für iOS, iPadOS, Android, macOS, Windows und Linux in sauber getrennter Schichtenarchitektur.',
+        title: 'Eine Codebasis für Mobilgeräte, Desktop & Raspberry Pi',
+        desc: 'Entwickelt mit Flutter für iOS, iPadOS, Android, macOS, Windows und Linux (x86-64 & ARM64 für Raspberry Pi 4/5) in sauberer Schichtenarchitektur.',
       },
     },
     syncEngine: {
@@ -409,7 +419,7 @@ To exercise your rights, please contact the controller using the email address i
         'Tideline verbindet sich über die moderne API v2 mit deiner selbst gehosteten Wavelog-Instanz – mit sicheren Rechten und intelligenter Duplikaterkennung.',
       step1Title: '1. Im Gelände (Komplett Offline)',
       step1Desc:
-        'QSOs werden sofort in die durch Hardware-Verschlüsselung des Betriebssystems geschützte lokale SQLite-Datenbank mit UUID und UTC-Zeitstempel eingetragen und als "lokal" bzw. "in Warteschlange" markiert.',
+        'QSOs werden sofort in die durch das Betriebssystem geschützte lokale SQLite-Datenbank mit UUID und UTC-Zeitstempel eingetragen und als "lokal" bzw. "in Warteschlange" markiert.',
       step2Title: '2. Wieder online (Smartes Debounced Sync)',
       step2Desc:
         'Sobald wieder Netz vorhanden ist, entprellt Tideline Verbindungswechsel, führt eine leichte Erreichbarkeits-Probe aus und gleicht Duplikate mit Wavelog ab.',
@@ -419,7 +429,7 @@ To exercise your rights, please contact the controller using the email address i
     },
     roadmap: {
       sectionBadge: 'Entwicklungsfahrplan',
-      title: 'Von der Idee zur Version 0.6.0 & Zukunft',
+      title: 'Von der Idee zur Version 1.0.0 & Zukunft',
       subtitle:
         'Tideline wird in klar definierten, testgetriebenen Phasen entwickelt. Jeder Meilenstein wird automatisiert gegen Mock-Server geprüft.',
       m1: {
@@ -430,7 +440,7 @@ To exercise your rights, please contact the controller using the email address i
       m2: {
         version: 'M2: MVP (v0.1)',
         status: 'Abgeschlossen',
-        desc: 'QSO-Logging, transparente Sync-Warteschlange mit Journal, Offline-DXCC, ADIF Export/Import, verschlüsseltes Backup, DE/EN Lokalisierung.',
+        desc: 'QSO-Logging, transparente Sync-Warteschlange mit Journal, Offline-DXCC, ADIF Export/Import, Backup, DE/EN Lokalisierung.',
       },
       m3: {
         version: 'M3: Contest-Modus (v0.2)',
@@ -448,14 +458,19 @@ To exercise your rights, please contact the controller using the email address i
         desc: 'Fast Log Entry (FLE) Kurzschrift, 1-Klick-Feldmodus mit Batteriesparer, Multi-Wavelog-Konten, Rufzeichenverzeichnis und Desktop-Navigation.',
       },
       m6: {
-        version: 'M6: In-App Demo & Architektur (v0.6.0)',
-        status: 'Veröffentlicht (v0.6.0)',
-        desc: 'Sofort startbarer Offline-Demomodus ohne Wavelog-Server, automatisierte Multi-Plattform-Release-Pipelines, smartes Sync-Debouncing und schlanke Hardware-Sicherheitsarchitektur (ADR 0034).',
+        version: 'M6: In-App Demo, Sync & OS-Speicher (v0.5–v0.6)',
+        status: 'Abgeschlossen',
+        desc: 'Sofort startbarer Offline-Demomodus ohne Wavelog-Server, automatisierte Multi-Plattform-Release-Pipelines, smartes Sync-Debouncing und schlanke OS-Speicherarchitektur (ADR 0034).',
+      },
+      m7: {
+        version: 'M7: Wavelog-Abgleich & Raspberry Pi ARM64 (v0.7)',
+        status: 'Abgeschlossen',
+        desc: '„Von Wavelog aktualisieren“ für geänderte synchronisierte QSOs (ADR 0035), kombinierter Datum-/Zeit-Schnelldialog, experimentelle Linux-ARM64-Builds für Raspberry Pi 4 & 5 sowie System-Schlüsselbund-Prüfung.',
       },
       v1: {
-        version: 'v1.0: Store-Veröffentlichung & Public Launch',
-        status: 'In Vorbereitung',
-        desc: 'Letzte Feinabstimmungen, Veröffentlichung im Google Play Store und Apple App Store sowie Community-Dokumentation.',
+        version: 'v1.0.0: Erstes stabiles Release',
+        status: 'Veröffentlicht (v1.0.0)',
+        desc: 'Erstes stabiles Release nach Abschluss aller Praxistests zu Datensicherheit, Feldeinsatz, Barrierefreiheit (WCAG 2.2), Plattformen und DE/EN-Lokalisierung. Als Nächstes: Store-Freigaben, Gerät-zu-Gerät-LAN-Sync und WSJT-X-Listener.',
       },
     },
     manuals: {
@@ -466,14 +481,14 @@ To exercise your rights, please contact the controller using the email address i
       readFullButton: 'Vollständiges Dokument auf GitHub ansehen',
     },
     download: {
-      title: 'Tideline v0.6.0 herunterladen',
+      title: 'Tideline v1.0.0 herunterladen',
       subtitle:
-        'Tideline 0.6.0 ist jetzt verfügbar. Lade Standalone-Pakete für Windows und Linux von GitHub herunter, teste die iOS- und macOS-Beta via TestFlight oder Android via Google Play.',
-      btnGithub: 'GitHub Releases (Windows & Linux)',
+        'Tideline 1.0.0 – die erste stabile Version – ist jetzt verfügbar. Lade Standalone-Pakete für Windows und Linux (x86-64 & Raspberry Pi ARM64) von GitHub herunter, nutze TestFlight für iOS, iPadOS und macOS oder Google Play für Android.',
+      btnGithub: 'GitHub Releases (Windows & Linux x64/ARM64)',
       btnWavelog: 'Mehr über Wavelog.org',
       starLabel: 'Stern auf GitHub vergeben',
       testflightNote: 'Erfordert die kostenlose TestFlight-App von Apple.',
-      testingNotice: 'Öffentliche Testversionen · Reguläre Store-Releases folgen mit v1.0',
+      testingNotice: 'v1.0.0 Stabiles Release · Öffentliche TestFlight- & Google-Play-Versionen aktiv',
     },
     footer: {
       copyright: '© Tideline Projekt. Veröffentlicht unter der MIT-Lizenz.',
@@ -555,16 +570,17 @@ Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertra
 
 4. Datenschutz in der App „Tideline“
 
-Lokale Datenspeicherung (Offline-First)
+Lokale Datenspeicherung & Betriebssystem-Schutz (Offline-First, ADR 0034)
 Die App „Tideline“ ist ein Offline-First-Logging-Programm für Funkamateure:
-• Sämtliche erfassten QSO-Daten, Rufzeichen, Rapporte, Frequenzen, Betriebsarten, Zeitstempel, Grid-Locators und Notizen werden ausschließlich lokal in einer verschlüsselten Datenbank auf Ihrem Endgerät gespeichert.
-• Sensible Zugangsdaten (wie API-Tokens für Ihre Wavelog-Instanz) werden sicher im Hardware-Schlüsselspeicher Ihres Betriebssystems abgelegt (iOS Keychain, Android Keystore, Windows Credential Locker, macOS Keychain).
+• Sämtliche erfassten QSO-Daten, Rufzeichen, Rapporte, Frequenzen, Betriebsarten, Zeitstempel, Grid-Locators, Rufzeichenverzeichnis-Einträge und Notizen werden ausschließlich lokal in einer SQLite-Datenbank auf Ihrem Endgerät gespeichert.
+• Tideline verwendet keine eigene App-seitige Datenbankverschlüsselung (ITSAppUsesNonExemptEncryption ist false). Auf dem Gerät werden die Daten durch die Bildschirmsperre und den Speicherschutz des Betriebssystems geschützt sowie von automatischen Cloud-Backups (iCloud, iTunes, Google Cloud-Backup) ausgenommen. Exportierte ADIF-, Cabrillo- und .tlbackup-Dateien sind unverschlüsselte Dateien, die nur dort gespeichert werden, wo Sie diese selbst ablegen.
+• Sensible Zugangsdaten (API-Tokens für Ihre Wavelog-Instanz) werden ausschließlich im sicheren Schlüsselspeicher Ihres Betriebssystems abgelegt (iOS/macOS Keychain, Android Keystore, geschützter Windows-Speicher, Linux Secret Service / Keyring) und sind niemals Teil von Backups oder Exporten.
 • Der Betreiber von Tideline hat zu keinem Zeitpunkt Zugriff auf Ihre lokalen Logbuchdaten oder Zugangsdaten.
 
-Direkte Synchronisation mit Wavelog
-Wenn Sie die Synchronisationsfunktion nutzen, verbindet sich die Tideline-App ausschließlich und direkt zwischen Ihrem Endgerät und dem von Ihnen konfigurierten Wavelog-Server über die Wavelog API v2:
-• Tideline betreibt keine zwischengeschalteten Relay-, Proxy- oder Cloud-Synchronisationsserver.
-• Die Datenübertragung unterliegt den Datenschutzbestimmungen und Sicherheitsmaßnahmen der von Ihnen gewählten Wavelog-Instanz.
+Direkte Synchronisation mit Wavelog & Referenzdaten-Downloads
+• Wavelog-Synchronisation: Wenn Sie die Synchronisationsfunktion nutzen, verbindet sich die Tideline-App ausschließlich und direkt zwischen Ihrem Endgerät und dem von Ihnen konfigurierten Wavelog-Server über die Wavelog API v2. Tideline betreibt keine zwischengeschalteten Relay-, Proxy- oder Cloud-Synchronisationsserver.
+• Referenzlisten (nur auf ausdrücklichen Abruf): Nur wenn Sie in den Einstellungen aktiv auf „Herunterladen“ oder „Aktualisieren“ tippen, lädt Tideline öffentliche Referenzdateien per HTTPS herunter (MASTER.SCP von supercheckpartial.com, SOTA-Gipfelliste von sotadata.org.uk / storage.sota.org.uk, POTA-Parkliste von pota.app, WWFF-Verzeichnis von wwff.co). Dabei werden keinerlei persönliche Daten oder Logbuchinhalte übermittelt, sondern lediglich ein generischer Tideline/<Version> User-Agent.
+• Integrierter Demomodus: Das eingebaute Demokonto auf dem Startbildschirm läuft zu 100 % lokal innerhalb der App und baut keinerlei Netzwerkverbindungen auf.
 
 Keine Telemetrie, keine Analyse-Tools, keine Werbung
 Die Tideline-App enthält:
@@ -574,12 +590,13 @@ Die Tideline-App enthält:
 • Keine Telemetrie- oder Nutzungsstatistiken
 
 App-Berechtigungen
-Die App fordert ausschließlich Berechtigungen an, die für ihre Kernfunktionen zwingend notwendig sind:
-• Netzwerkzugriff: Ausschließlich zur direkten Kommunikation mit Ihrer Wavelog-Instanz.
-• Standort (optional): Sofern Sie die GPS-Standortermittlung zur automatischen Berechnung Ihres Maidenhead-Grid-Locators aktivieren, werden die Koordinaten rein flüchtig im lokalen Arbeitsspeicher Ihres Geräts verarbeitet und niemals an Dritte oder den Entwickler übertragen.
+Die App fordert ausschließlich Berechtigungen an, die für ihre Kernfunktionen notwendig sind:
+• Netzwerkzugriff (Internet & lokales Netzwerk): Ausschließlich zur direkten Kommunikation mit Ihrer konfigurierten Wavelog-Instanz (auch im eigenen LAN) sowie zum von Ihnen angestoßenen Download von Referenzlisten.
+• Biometrie (optional): Wird ausschließlich für die optionale App-Sperre verwendet und vollständig durch das Betriebssystem ausgewertet; Tideline erhält keinen Zugriff auf biometrische Daten.
+• Standort & Kamera: Werden nicht verwendet. Tideline fragt niemals Ihren GPS-Standort oder Kamerazugriff ab; Sie geben Ihren Maidenhead-Grid-Locator selbst ein oder übernehmen ihn aus einer gewählten Referenz.
 
 App-Stores & Vertrieb
-Die App wird über den Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA) und den Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) bereitgestellt. Beim Herunterladen der App verarbeiten die Plattformbetreiber personenbezogene Daten gemäß ihren eigenen Bestimmungen (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
+Die App wird über den Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA), den Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) sowie über GitHub Releases bereitgestellt. Beim Herunterladen der App verarbeiten die jeweiligen Plattformbetreiber personenbezogene Daten gemäß ihren eigenen Bestimmungen (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
 
 
 5. Ihre Rechte als betroffene Person (Betroffenenrechte)
@@ -595,6 +612,7 @@ Nach der Datenschutz-Grundverordnung (DSGVO) stehen Ihnen folgende Rechte zu:
 
 Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die oben angegebene verantwortliche Stelle.`,
       close: 'Schließen',
+      backToHome: 'Zurück zur Startseite',
     },
   },
 }

@@ -172,7 +172,7 @@ export const FeaturesBento: React.FC<FeaturesBentoProps> = ({ lang }) => {
                 { name: 'Android', icon: <Smartphone className="w-4 h-4" /> },
                 { name: 'macOS', icon: <Monitor className="w-4 h-4" /> },
                 { name: 'Windows', icon: <Monitor className="w-4 h-4" /> },
-                { name: 'Linux', icon: <Terminal className="w-4 h-4" /> },
+                { name: 'Linux (x64 & ARM64)', icon: <Terminal className="w-4 h-4" /> },
               ].map((plat) => (
                 <div
                   key={plat.name}

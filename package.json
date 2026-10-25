@@ -7,7 +7,7 @@
     "dev": "vite",
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "generate:og": "node scripts/generate-og-image.js",
-    "build": "node scripts/generate-sitemap.js && tsc && vite build",
+    "build": "node scripts/generate-sitemap.js && tsc && vite build && node scripts/generate-static-routes.js",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"index.html\""
   },

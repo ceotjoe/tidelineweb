@@ -9,9 +9,16 @@ interface NavbarProps {
   setMode: (mode: ThemeMode) => void
   lang: Language
   setLang: (lang: Language) => void
+  onNavigateHome?: (sectionHash?: string) => void
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  mode,
+  setMode,
+  lang,
+  setLang,
+  onNavigateHome,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [themeDropdownOpen, setThemeDropdownOpen] = useState(false)
   const t = translations[lang].nav
@@ -49,7 +56,13 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) 
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand Name */}
           <a
-            href="#"
+            href="/"
+            onClick={(e) => {
+              if (onNavigateHome) {
+                e.preventDefault()
+                onNavigateHome()
+              }
+            }}
             className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-xl p-1"
           >
             <TidelineLogo mode={mode} size={42} />
@@ -59,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) 
                   {t.brand}
                 </span>
                 <span className="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-[var(--bg-surface-variant)] text-[var(--text-secondary)] border border-[var(--border-outline)]/40">
-                  v0.6.0
+                  v1.0.0
                 </span>
               </div>
               <p className="text-xs text-[var(--text-secondary)] font-medium -mt-0.5 hidden sm:block">
@@ -71,31 +84,61 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-7">
             <a
-              href="#features"
+              href="/#features"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#features')
+                }
+              }}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-md px-1 py-0.5"
             >
               {t.features}
             </a>
             <a
-              href="#field-modes"
+              href="/#field-modes"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#field-modes')
+                }
+              }}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-md px-1 py-0.5"
             >
               {t.fieldModes}
             </a>
             <a
-              href="#sync-engine"
+              href="/#sync-engine"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#sync-engine')
+                }
+              }}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-md px-1 py-0.5"
             >
               {t.syncEngine}
             </a>
             <a
-              href="#roadmap"
+              href="/#roadmap"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#roadmap')
+                }
+              }}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-md px-1 py-0.5"
             >
               {t.roadmap}
             </a>
             <a
-              href="#manuals"
+              href="/#manuals"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#manuals')
+                }
+              }}
               className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-focus)] rounded-md px-1 py-0.5"
             >
               {t.manuals}
@@ -208,36 +251,66 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, setMode, lang, setLang }) 
           </div>
           <div className="flex flex-col space-y-2">
             <a
-              href="#features"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#features"
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#features')
+                }
+              }}
               className="px-3 py-2 rounded-lg font-medium text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)]"
             >
               {t.features}
             </a>
             <a
-              href="#field-modes"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#field-modes"
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#field-modes')
+                }
+              }}
               className="px-3 py-2 rounded-lg font-medium text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)]"
             >
               {t.fieldModes}
             </a>
             <a
-              href="#sync-engine"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#sync-engine"
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#sync-engine')
+                }
+              }}
               className="px-3 py-2 rounded-lg font-medium text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)]"
             >
               {t.syncEngine}
             </a>
             <a
-              href="#roadmap"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#roadmap"
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#roadmap')
+                }
+              }}
               className="px-3 py-2 rounded-lg font-medium text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)]"
             >
               {t.roadmap}
             </a>
             <a
-              href="#manuals"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/#manuals"
+              onClick={(e) => {
+                setMobileMenuOpen(false)
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#manuals')
+                }
+              }}
               className="px-3 py-2 rounded-lg font-medium text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-variant)]"
             >
               {t.manuals}

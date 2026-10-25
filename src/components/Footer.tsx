@@ -8,9 +8,15 @@ interface FooterProps {
   mode: ThemeMode
   lang: Language
   onOpenLegal: (type: 'impressum' | 'privacy') => void
+  onNavigateHome?: (sectionHash?: string) => void
 }
 
-export const Footer: React.FC<FooterProps> = ({ mode, lang, onOpenLegal }) => {
+export const Footer: React.FC<FooterProps> = ({
+  mode,
+  lang,
+  onOpenLegal,
+  onNavigateHome,
+}) => {
   const t = translations[lang].footer
 
   return (
@@ -30,19 +36,64 @@ export const Footer: React.FC<FooterProps> = ({ mode, lang, onOpenLegal }) => {
 
           {/* Nav / Repo Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-[var(--text-secondary)]">
-            <a href="#features" className="hover:text-[var(--color-primary)] transition-colors">
+            <a
+              href="/#features"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#features')
+                }
+              }}
+              className="hover:text-[var(--color-primary)] transition-colors"
+            >
               {lang === 'en' ? 'Features' : 'Funktionen'}
             </a>
-            <a href="#field-modes" className="hover:text-[var(--color-primary)] transition-colors">
+            <a
+              href="/#field-modes"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#field-modes')
+                }
+              }}
+              className="hover:text-[var(--color-primary)] transition-colors"
+            >
               {lang === 'en' ? 'Field Modes' : 'Feld-Modi'}
             </a>
-            <a href="#sync-engine" className="hover:text-[var(--color-primary)] transition-colors">
+            <a
+              href="/#sync-engine"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#sync-engine')
+                }
+              }}
+              className="hover:text-[var(--color-primary)] transition-colors"
+            >
               {lang === 'en' ? 'Sync Engine' : 'Sync-Engine'}
             </a>
-            <a href="#roadmap" className="hover:text-[var(--color-primary)] transition-colors">
+            <a
+              href="/#roadmap"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#roadmap')
+                }
+              }}
+              className="hover:text-[var(--color-primary)] transition-colors"
+            >
               {lang === 'en' ? 'Roadmap' : 'Roadmap'}
             </a>
-            <a href="#manuals" className="hover:text-[var(--color-primary)] transition-colors">
+            <a
+              href="/#manuals"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault()
+                  onNavigateHome('#manuals')
+                }
+              }}
+              className="hover:text-[var(--color-primary)] transition-colors"
+            >
               {lang === 'en' ? 'Manuals' : 'Handbuch'}
             </a>
             <a
@@ -68,21 +119,29 @@ export const Footer: React.FC<FooterProps> = ({ mode, lang, onOpenLegal }) => {
             <p className="opacity-80">{t.copyright}</p>
           </div>
 
-          {/* Legal Buttons (Impressum & Privacy) */}
+          {/* Legal Links (Dedicated Pages: /imprint & /privacy) */}
           <div className="flex items-center gap-4 font-semibold">
-            <button
-              onClick={() => onOpenLegal('impressum')}
+            <a
+              href="/imprint"
+              onClick={(e) => {
+                e.preventDefault()
+                onOpenLegal('impressum')
+              }}
               className="hover:text-[var(--color-primary)] hover:underline focus:outline-none"
             >
               {t.impressum}
-            </button>
+            </a>
             <span>·</span>
-            <button
-              onClick={() => onOpenLegal('privacy')}
+            <a
+              href="/privacy"
+              onClick={(e) => {
+                e.preventDefault()
+                onOpenLegal('privacy')
+              }}
               className="hover:text-[var(--color-primary)] hover:underline focus:outline-none"
             >
               {t.privacy}
-            </button>
+            </a>
           </div>
         </div>
       </div>
