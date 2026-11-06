@@ -1,0 +1,32 @@
+# Tideline – Apache-Konfiguration für einfachen Webspace (z. B. STRATO). Alles optional, nichts ist Pflicht.
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "DENY"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  # Nur eigene Ressourcen – passend zum Datenschutzversprechen (keine externen Dienste)
+  Header always set Content-Security-Policy "default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml
+</IfModule>
+AddType font/ttf .ttf
+
+# Alte URLs (in den App-Stores verlinkt): ohne Weiterleitung mit HTTP 200 ausliefern
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(privacy|imprint|datenschutz|impressum)/?$ /legacy/$1.html [L]
+</IfModule>

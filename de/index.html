@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tideline – Offline-Logger für Wavelog</title>
+<meta name="description" content="Tideline ist die Open-Source-App für Funkamateure: QSOs bei SOTA, POTA, WWFF und im Contest offline loggen und mit Wavelog synchronisieren. iOS, Android, macOS, Windows.">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://tideline.holzapfel-online.de/de/">
+<link rel="alternate" hreflang="de" href="https://tideline.holzapfel-online.de/de/">
+<link rel="alternate" hreflang="en" href="https://tideline.holzapfel-online.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://tideline.holzapfel-online.de/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tideline">
+<meta property="og:title" content="Tideline – Offline-Logger für Wavelog">
+<meta property="og:description" content="Tideline ist die Open-Source-App für Funkamateure: QSOs bei SOTA, POTA, WWFF und im Contest offline loggen und mit Wavelog synchronisieren. iOS, Android, macOS, Windows.">
+<meta property="og:url" content="https://tideline.holzapfel-online.de/de/">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://tideline.holzapfel-online.de/assets/img/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tideline – Offline-Logger für Wavelog">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Tideline for Wavelog",
+ "alternateName": "Tideline",
+ "description": "Tideline ist die Open-Source-App für Funkamateure: QSOs bei SOTA, POTA, WWFF und im Contest offline loggen und mit Wavelog synchronisieren. iOS, Android, macOS, Windows.",
+ "url": "https://tideline.holzapfel-online.de/de/",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": "iOS, iPadOS, Android, macOS, Windows, Linux",
+ "softwareVersion": "1.0.0",
+ "inLanguage": [
+  "de",
+  "en"
+ ],
+ "license": "https://opensource.org/licenses/MIT",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "EUR"
+ },
+ "image": "https://tideline.holzapfel-online.de/assets/img/og-de.png",
+ "downloadUrl": "https://github.com/ceotjoe/tideline/releases",
+ "installUrl": [
+  "https://apps.apple.com/de/app/tideline-for-wavelog/id6818971370",
+  "https://play.google.com/store/apps/details?id=com.ITWebService.tideline"
+ ],
+ "sameAs": [
+  "https://github.com/ceotjoe/tideline"
+ ],
+ "author": {
+  "@type": "Person",
+  "name": "Jörg Holzapfel",
+  "alternateName": "DO1HOZ"
+ }
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><div class="wrap">
+ <a class="brand" href="/de/"><img src="/assets/img/tideline-icon.svg" alt="" width="36" height="36">Tideline</a>
+ <nav aria-label="Hauptnavigation"><a href="#ideen">Idee</a><a href="#tag">App</a><a href="#funktionen">Funktionen</a><a href="#plus">Barrierefrei &amp; privat</a><a href="#faq">FAQ</a><a href="#download">Download</a></nav>
+ <div class="ctl">
+  <div class="toggle" role="group" aria-label="Sprache wählen">
+   <a href="/de/" lang="de" hreflang="de" aria-current="true" data-lang-link="de">DE</a>
+   <a href="/en/" lang="en" hreflang="en" data-lang-link="en">EN</a>
+  </div>
+  <div class="toggle theme-toggle" role="group" aria-label="Farbschema">
+   <button type="button" data-theme-set="light" aria-pressed="false" aria-label="Hell">☀</button>
+   <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dunkel">☾</button>
+  </div>
+ </div>
+</div></header>
+
+<main id="main">
+<div class="hero">
+ <div class="topo" aria-hidden="true"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" focusable="false"><path d="M945 300 L952 304 L955 309 L953 313 L949 316 L945 320 L941 322 L935 324 L928 324 L920 322 L914 321 L911 321 L908 324 L904 328 L900 329 L895 328 L892 326 L888 324 L883 325 L877 326 L871 325 L866 323 L862 321 L857 319 L851 316 L846 313 L845 309 L850 304 L858 300 L866 297 L870 295 L871 293 L871 290 L872 288 L873 285 L873 282 L873 277 L874 271 L877 267 L882 265 L889 266 L895 268 L900 269 L905 268 L911 267 L916 268 L920 271 L923 275 L925 278 L928 281 L930 283 L931 287 L930 290 L928 293 L930 295 L936 297Z"/><path d="M992 300 L1004 308 L1008 317 L1005 325 L999 333 L993 340 L984 346 L970 348 L953 346 L937 341 L927 338 L921 341 L916 348 L909 354 L900 357 L891 355 L882 353 L873 353 L862 354 L850 354 L841 351 L834 346 L827 340 L816 336 L804 332 L793 326 L793 317 L803 308 L818 300 L831 295 L838 290 L841 286 L843 281 L846 276 L848 271 L847 263 L845 252 L845 240 L851 230 L863 228 L877 231 L889 235 L900 237 L910 236 L921 236 L931 240 L938 246 L943 253 L949 257 L957 261 L963 266 L964 272 L960 280 L958 286 L962 290 L975 294Z"/><path d="M1041 300 L1054 312 L1057 325 L1054 337 L1050 350 L1043 362 L1028 370 L1004 372 L977 366 L953 358 L938 355 L930 360 L923 370 L913 379 L900 382 L887 382 L873 383 L856 386 L838 389 L821 386 L810 378 L802 367 L793 359 L777 353 L758 347 L744 338 L745 324 L760 311 L780 300 L795 292 L803 285 L808 278 L815 272 L822 266 L824 258 L820 245 L814 226 L814 206 L825 193 L844 190 L865 195 L884 200 L900 202 L916 203 L931 208 L942 216 L951 227 L960 234 L973 237 L987 240 L997 247 L998 258 L993 269 L991 278 L1000 284 L1020 291Z"/><path d="M1090 300 L1101 316 L1102 332 L1101 349 L1100 366 L1093 384 L1072 394 L1037 395 L999 385 L968 375 L950 372 L940 379 L930 391 L916 401 L900 406 L882 409 L862 416 L837 424 L811 427 L791 420 L779 405 L771 389 L759 378 L738 370 L715 362 L701 348 L705 331 L723 314 L742 300 L755 289 L763 278 L773 269 L787 262 L798 256 L800 245 L791 225 L782 198 L783 172 L799 156 L825 153 L853 157 L878 163 L900 166 L921 171 L939 182 L952 198 L962 211 L976 217 L996 217 L1017 219 L1031 228 L1033 242 L1028 257 L1030 269 L1045 277 L1069 287Z"/><path class="idx" d="M1139 300 L1144 319 L1144 338 L1146 359 L1150 383 L1142 405 L1113 417 L1067 415 L1019 403 L984 392 L964 391 L951 400 L937 412 L920 420 L900 427 L878 437 L850 452 L816 466 L783 468 L759 455 L747 432 L739 411 L724 397 L700 387 L676 374 L666 357 L674 336 L690 316 L704 300 L711 285 L719 272 L736 260 L758 253 L773 245 L773 230 L759 203 L748 169 L753 138 L775 121 L807 117 L840 119 L871 122 L900 127 L926 139 L946 160 L959 183 L971 198 L990 201 L1018 198 L1047 199 L1064 210 L1068 227 L1068 244 L1076 257 L1098 269 L1123 283Z"/><path d="M1187 300 L1183 322 L1182 344 L1190 370 L1197 399 L1187 424 L1149 437 L1094 434 L1040 421 L1002 412 L979 413 L962 422 L943 431 L923 438 L900 448 L873 467 L837 492 L793 510 L753 510 L727 490 L715 460 L705 435 L687 417 L662 403 L642 386 L639 363 L650 339 L662 319 L665 300 L665 282 L673 264 L697 251 L727 243 L745 233 L741 213 L725 179 L715 140 L724 107 L753 89 L789 82 L827 80 L864 80 L900 88 L931 109 L953 141 L966 170 L980 186 L1005 185 L1040 179 L1074 180 L1095 193 L1104 212 L1112 229 L1131 244 L1158 259 L1180 278Z"/><path d="M1234 300 L1221 325 L1220 350 L1232 380 L1241 413 L1225 441 L1179 454 L1118 450 L1062 440 L1023 435 L997 439 L974 445 L949 449 L925 454 L900 469 L868 498 L823 533 L771 555 L725 551 L696 524 L681 490 L667 460 L647 439 L625 419 L615 395 L620 367 L632 342 L635 321 L625 300 L616 278 L626 257 L657 241 L692 231 L710 218 L703 192 L687 153 L682 112 L699 79 L733 60 L773 49 L814 40 L857 37 L900 49 L936 81 L958 124 L972 158 L989 173 L1020 169 L1060 161 L1098 163 L1123 177 L1141 196 L1163 213 L1195 229 L1226 249 L1240 274Z"/><path d="M1280 300 L1259 328 L1258 356 L1273 390 L1279 426 L1256 454 L1203 466 L1139 465 L1086 461 L1048 462 L1017 468 L986 470 L955 468 L928 471 L900 492 L862 532 L809 575 L749 598 L698 590 L665 558 L645 520 L626 489 L605 462 L591 434 L594 402 L609 370 L619 344 L609 323 L584 300 L568 274 L580 250 L616 231 L652 218 L666 199 L658 167 L647 125 L652 85 L677 56 L715 35 L756 17 L801 -0 L850 -6 L900 12 L940 55 L964 107 L979 145 L1000 157 L1035 151 L1079 145 L1118 149 L1149 163 L1180 179 L1221 193 L1266 212 L1298 237 L1301 269Z"/><path d="M1327 300 L1301 331 L1299 363 L1312 399 L1310 436 L1277 463 L1219 475 L1159 479 L1112 483 L1075 492 L1039 499 L999 496 L962 487 L931 491 L900 520 L856 569 L795 617 L729 637 L673 624 L635 591 L607 553 L581 520 L561 486 L559 448 L578 407 L603 372 L608 346 L583 325 L544 300 L523 271 L536 243 L573 221 L605 202 L614 176 L607 139 L605 97 L624 61 L659 35 L699 12 L741 -14 L788 -39 L843 -46 L900 -20 L944 33 L969 90 L988 128 L1013 138 L1052 133 L1096 131 L1135 138 L1174 150 L1222 160 L1284 173 L1342 193 L1371 226 L1361 264Z"/><path class="idx" d="M1376 300 L1347 335 L1343 370 L1348 408 L1332 443 L1288 468 L1229 481 L1178 492 L1140 508 L1105 525 L1062 531 L1013 522 L969 510 L935 516 L900 553 L850 609 L782 655 L712 671 L652 655 L606 622 L568 588 L534 552 L518 510 L531 460 L567 411 L598 373 L595 348 L555 327 L506 300 L482 268 L495 236 L526 210 L548 183 L551 149 L549 107 L563 68 L598 39 L642 17 L684 -9 L725 -44 L776 -75 L838 -80 L900 -47 L947 12 L976 70 L999 105 L1030 114 L1069 114 L1110 118 L1150 128 L1198 136 L1268 141 L1351 150 L1419 175 L1443 214 L1420 260Z"/><path d="M1430 300 L1399 339 L1390 377 L1379 416 L1345 448 L1290 469 L1236 485 L1198 506 L1171 534 L1136 559 L1085 564 L1027 551 L978 537 L941 549 L900 592 L843 649 L771 690 L697 699 L633 682 L578 654 L526 623 L487 585 L478 532 L507 470 L558 414 L591 375 L578 351 L527 329 L473 300 L448 265 L457 230 L476 198 L483 161 L480 118 L488 73 L521 39 L574 18 L626 -0 L669 -30 L711 -72 L765 -106 L833 -107 L900 -68 L950 -7 L984 47 L1014 76 L1049 87 L1087 95 L1123 107 L1164 118 L1226 121 L1317 119 L1420 127 L1494 157 L1511 204 L1478 255Z"/><path d="M1489 300 L1458 343 L1438 385 L1405 422 L1349 449 L1286 467 L1241 488 L1219 520 L1201 561 L1165 591 L1107 596 L1043 581 L990 571 L947 590 L900 637 L836 689 L761 720 L686 721 L617 705 L550 684 L485 659 L442 616 L441 552 L486 479 L546 417 L577 378 L556 354 L498 331 L445 300 L421 263 L420 225 L420 184 L409 137 L402 84 L425 39 L481 11 L551 -2 L610 -18 L654 -52 L698 -98 L758 -131 L831 -125 L900 -83 L953 -26 L993 18 L1031 42 L1070 56 L1105 75 L1136 96 L1180 107 L1257 103 L1370 96 L1487 105 L1563 140 L1573 194 L1536 251Z"/><path d="M1553 300 L1523 348 L1486 392 L1426 427 L1347 449 L1280 465 L1247 491 L1241 535 L1231 587 L1193 622 L1129 627 L1060 615 L1004 614 L956 641 L900 688 L830 729 L753 745 L678 738 L602 726 L522 714 L447 692 L401 644 L410 569 L467 488 L530 423 L554 383 L526 359 L469 333 L422 300 L399 261 L384 219 L358 169 L328 110 L322 50 L362 4 L441 -16 L526 -23 L591 -39 L638 -76 L687 -121 L752 -146 L829 -134 L900 -92 L957 -46 L1005 -16 L1051 2 L1093 23 L1124 54 L1152 82 L1201 92 L1295 83 L1425 73 L1549 84 L1622 126 L1628 185 L1593 246Z"/><path d="M1623 300 L1590 354 L1532 399 L1441 430 L1342 447 L1274 462 L1255 495 L1263 551 L1258 610 L1217 648 L1149 657 L1080 654 L1021 666 L966 701 L900 742 L824 766 L746 765 L670 753 L589 746 L497 743 L412 722 L368 667 L386 583 L448 496 L506 431 L521 392 L489 365 L441 336 L405 300 L380 260 L344 213 L291 153 L244 82 L243 15 L303 -28 L402 -43 L499 -47 L569 -63 L621 -100 L678 -139 L750 -153 L829 -134 L900 -98 L960 -69 L1017 -54 L1073 -40 L1117 -11 L1145 31 L1172 65 L1230 73 L1338 59 L1479 49 L1604 66 L1670 114 L1676 178 L1652 242Z"/><path class="idx" d="M1696 300 L1657 359 L1573 406 L1452 433 L1337 445 L1274 462 L1268 503 L1286 566 L1281 629 L1237 670 L1170 686 L1102 699 L1041 727 L976 768 L900 798 L818 801 L740 782 L664 766 L575 766 L473 768 L385 746 L345 683 L368 593 L426 505 L472 442 L475 403 L446 371 L414 338 L391 300 L361 258 L301 206 L220 136 L161 55 L169 -17 L248 -59 L363 -70 L467 -74 L543 -92 L603 -125 L671 -151 L751 -150 L830 -127 L900 -102 L964 -94 L1031 -95 L1095 -84 L1141 -45 L1168 6 L1198 42 L1268 46 L1388 31 L1531 26 L1648 52 L1707 105 L1718 171 L1711 237Z"/><path d="M1768 300 L1720 364 L1608 411 L1461 435 L1337 445 L1282 465 L1287 513 L1307 580 L1298 644 L1253 688 L1190 716 L1128 749 L1064 796 L988 839 L900 854 L813 833 L735 799 L656 781 L561 785 L454 789 L366 762 L332 691 L355 600 L401 516 L427 457 L419 416 L399 379 L387 340 L376 300 L336 256 L251 198 L147 118 L83 29 L103 -45 L198 -86 L322 -98 L430 -106 L512 -125 L586 -149 L668 -157 L754 -140 L832 -115 L900 -106 L969 -121 L1045 -137 L1116 -126 L1165 -80 L1195 -23 L1234 11 L1317 13 L1444 1 L1580 6 L1681 41 L1733 99 L1756 165 L1770 232Z"/><path d="M1835 300 L1773 368 L1636 416 L1471 438 L1347 449 L1301 474 L1310 526 L1325 593 L1310 655 L1266 702 L1212 747 L1156 805 L1088 869 L1000 911 L900 907 L808 864 L729 818 L647 799 L547 805 L440 805 L359 768 L330 693 L346 605 L370 530 L371 476 L355 431 L348 387 L358 342 L356 300 L303 254 L194 189 L75 101 L15 6 L48 -69 L154 -110 L280 -128 L388 -143 L479 -162 L571 -172 L668 -158 L759 -125 L834 -103 L900 -113 L973 -149 L1058 -176 L1135 -164 L1189 -114 L1227 -59 L1281 -29 L1376 -28 L1502 -31 L1622 -13 L1704 33 L1751 95 L1790 160 L1828 228Z"/><path d="M1892 300 L1814 371 L1657 419 L1486 441 L1370 456 L1332 487 L1338 541 L1341 604 L1318 662 L1278 715 L1236 782 L1187 866 L1113 944 L1011 980 L900 957 L803 896 L721 842 L635 822 L534 824 L432 813 L361 766 L337 689 L338 609 L332 546 L308 497 L287 448 L296 395 L325 345 L326 300 L258 250 L130 179 L8 85 L-41 -13 L6 -88 L114 -132 L234 -159 L342 -183 L445 -199 L557 -191 L670 -154 L765 -109 L836 -93 L900 -123 L978 -177 L1069 -211 L1153 -198 L1214 -149 L1265 -101 L1338 -79 L1444 -75 L1562 -64 L1658 -28 L1718 28 L1765 91 L1823 155 L1881 224Z"/><path d="M1934 300 L1840 373 L1674 422 L1509 447 L1407 469 L1374 505 L1370 558 L1355 614 L1324 667 L1292 730 L1263 820 L1219 928 L1137 1016 L1021 1043 L900 1003 L797 930 L711 872 L621 849 L522 841 L432 814 L374 755 L350 680 L329 614 L289 565 L239 519 L217 465 L242 404 L284 348 L281 300 L198 245 L62 168 L-51 70 L-82 -26 L-25 -101 L77 -152 L186 -192 L293 -225 L412 -235 L546 -207 L673 -148 L769 -95 L836 -89 L900 -137 L982 -203 L1079 -239 L1167 -227 L1239 -186 L1311 -151 L1405 -137 L1518 -126 L1621 -97 L1688 -42 L1729 25 L1778 88 L1854 150 L1926 220Z"/><path class="idx" d="M1957 300 L1852 374 L1689 424 L1543 455 L1460 486 L1427 528 L1404 577 L1368 623 L1330 672 L1308 748 L1292 862 L1250 990 L1159 1082 L1030 1098 L900 1045 L791 967 L698 910 L605 881 L512 856 L438 807 L395 737 L365 669 L317 620 L242 585 L171 542 L150 481 L186 412 L231 352 L217 300 L123 240 L-8 157 L-99 59 L-108 -35 L-46 -110 L43 -171 L137 -226 L245 -266 L382 -268 L537 -219 L675 -143 L771 -88 L836 -94 L900 -155 L986 -225 L1085 -260 L1180 -251 L1267 -225 L1364 -209 L1480 -201 L1596 -180 L1678 -128 L1715 -53 L1739 22 L1792 85 L1883 145 L1960 218Z"/><path d="M1961 300 L1850 374 L1704 427 L1589 466 L1526 508 L1487 554 L1439 597 L1382 632 L1341 682 L1330 772 L1324 907 L1279 1047 L1177 1137 L1038 1143 L900 1084 L784 1010 L683 955 L588 916 L505 866 L450 794 L419 716 L380 658 L302 629 L194 606 L107 563 L87 496 L127 422 L163 357 L134 300 L35 233 L-77 146 L-136 50 L-121 -39 L-60 -116 L11 -189 L90 -259 L202 -304 L358 -295 L531 -228 L676 -142 L770 -92 L833 -109 L900 -176 L989 -242 L1090 -273 L1191 -273 L1297 -269 L1422 -273 L1559 -269 L1672 -233 L1730 -157 L1741 -64 L1753 17 L1812 80 L1908 141 L1979 216Z"/><path d="M1944 300 L1838 373 L1723 430 L1646 480 L1601 533 L1551 582 L1476 617 L1401 645 L1360 698 L1358 803 L1356 953 L1305 1098 L1191 1179 L1043 1178 L900 1122 L776 1058 L666 1006 L570 951 L500 872 L466 777 L444 694 L391 651 L282 640 L148 626 L51 582 L30 510 L62 432 L78 364 L30 300 L-64 225 L-143 136 L-161 44 L-123 -40 L-70 -120 L-20 -206 L47 -288 L167 -334 L340 -314 L526 -236 L673 -148 L765 -108 L829 -134 L900 -198 L990 -254 L1092 -281 L1202 -295 L1331 -317 L1484 -341 L1637 -338 L1744 -282 L1779 -183 L1768 -76 L1775 9 L1837 74 L1928 138 L1980 216Z"/></svg></div>
+ <div class="peak" aria-hidden="true"><i></i><span>SOTA · POTA · WWFF</span></div>
+ <div class="wrap">
+  <div class="eyebrow">Offline-Logger für Wavelog</div>
+  <h1>Log, wo du funkst. Sync, wenn das Netz wieder da ist.</h1>
+  <p class="lead">Tideline ist die Open-Source-App für Funkamateure: QSOs auf dem Gipfel, im Park oder im Contest offline loggen und mit deinem eigenen Wavelog abgleichen – nachvollziehbar, QSO für QSO.</p>
+  <div class="badges">
+    <a class="dl-badge" href="https://apps.apple.com/de/app/tideline-for-wavelog/id6818971370" rel="noopener"><img src="/assets/badges/app-store-de.svg" alt="Laden im App Store – iPhone &amp; iPad" width="144" height="48"></a>
+    <a class="dl-badge" href="https://apps.apple.com/de/app/tideline-for-wavelog/id6818971370" rel="noopener"><img src="/assets/badges/mac-app-store-de.svg" alt="Laden im Mac App Store – Mac" width="187" height="48"></a>
+    <a class="dl-badge gb gb-de" href="https://play.google.com/store/apps/details?id=com.ITWebService.tideline" rel="noopener"><img src="/assets/badges/google-play-de.png" alt="Jetzt bei Google Play – Android" width="646" height="250"></a>
+    <a class="btn btn-line" href="#download">Alle Plattformen</a>
+  </div>
+  <p class="note">Open Source (MIT) · kein Konto bei uns · kein Tracking · iOS, iPadOS, Android, macOS, Windows · Aktuelle Version 1.0.0</p>
+ </div>
+</div>
+
+<section id="ideen" class="contour-top"><div class="wrap">
+ <h2>Vier Ideen, auf denen alles aufbaut</h2>
+ <ol class="ideas"><li><span class="n">1 / 4</span><h3>Offline ist der Normalfall</h3><p>Alles außer dem Sync selbst funktioniert ohne Verbindung – auch DXCC-Suche, Referenzlisten und „schon gearbeitet“-Hinweise.</p></li><li><span class="n">2 / 4</span><h3>Sync, den man nachvollziehen kann</h3><p>Jedes QSO zeigt seinen Status: lokal, wartend, wird hochgeladen, synchronisiert, Konflikt oder abgelehnt. Lehnt der Server etwas ab, sagt die App in Klartext warum. Nichts geht still verloren oder wird doppelt angelegt.</p></li><li><span class="n">3 / 4</span><h3>Gebaut für den Feldeinsatz</h3><p>Handschuhmodus, Sonnenlicht-Thema, Nachtrot, Energiesparer und „Display an“ – dazu volle Bedienbarkeit mit Screenreader und Tastatur.</p></li><li><span class="n">4 / 4</span><h3>Sicher und privat von Grund auf</h3><p>Keine Telemetrie, keine Werbung. Der API-Token liegt nur im sicheren Speicher des Betriebssystems, mit möglichst geringen Rechten.</p></li></ol>
+</div></section>
+
+<section id="tag" class="alt"><div class="wrap">
+ <h2>Ein Aktivierungstag mit Tideline</h2><p class="muted">Illustrierter Ablauf – so passen die Funktionen zu einem typischen Tag im Feld.</p>
+ <div class="story" id="story" data-offline="kein Netz" data-home="zu Hause" data-online="Netz da" data-zero="0 QSOs offen" data-pending="{n} QSOs warten auf den Sync">
+  <div class="sticky" aria-hidden="true">
+   <svg class="profile" viewBox="0 0 400 200" focusable="false"><path class="ground" d="M0 200 V150 C40 140 70 150 110 120 S170 50 210 40 S280 90 320 110 S380 150 400 140 V200Z"/>
+    <path class="path" id="pPath" d="M10 148 C40 140 70 150 110 120 S170 50 210 40 S280 90 320 110 S380 150 392 142" pathLength="1000"/>
+    <circle id="pDot" cx="10" cy="148" r="8"/></svg>
+   <div class="state"><span class="chip on" id="pNet">✓ zu Hause</span><span id="pCount"></span></div>
+   <div class="cap">Zeichnung zur Veranschaulichung – kein Screenshot</div>
+  </div>
+  <div class="steps"><div class="step on" data-k="0"><span class="num">01</span><h3>Vorher: Referenzliste laden</h3><p>Zu Hause lädst du die SOTA-, POTA- oder WWFF-Liste aus der offiziellen Quelle. Ab dann suchst du Gipfel oder Park offline – nach Name oder Entfernung.</p></div><div class="step" data-k="1"><span class="num">02</span><h3>Oben: kein Netz, kein Problem</h3><p>Aktivierung starten, Referenz und Locator setzen, loggen. Jedes QSO ist sofort gespeichert. Sonnenlicht-Thema und Handschuhmodus helfen bei Wind und Kälte.</p></div><div class="step" data-k="2"><span class="num">03</span><h3>Unterwegs zur gültigen Aktivierung</h3><p>Der Fortschritt zeigt, wie viele QSOs noch fehlen – als Text, auch für Screenreader. Park-to-Park und Summit-to-Summit trägst du pro QSO ein.</p></div><div class="step" data-k="3"><span class="num">04</span><h3>Unten: Sync mit Nachweis</h3><p>Sobald wieder Netz da ist, geht alles an dein Wavelog. Du siehst pro QSO, was passiert ist – und bei Problemen, warum.</p></div></div>
+ </div>
+</div></section>
+
+<section id="funktionen"><div class="wrap">
+ <h2>Funktionen – nach Situation sortiert</h2><p class="muted narrow">Was Tideline tut, hängt davon ab, wo du gerade sitzt. Alles hier ist in Version 1.0 enthalten.</p>
+ <div class="legend"><div><h3>Aktivierung (SOTA · POTA · WWFF)</h3><p class="s">Gipfel, Park, Wald – ohne Netz.</p><ul><li>Referenzlisten lädst du selbst aus den offiziellen Quellen; danach suchst du offline nach Name oder Entfernung.</li><li>Fortschritt bis zur gültigen Aktivierung, auch als Text: POTA 10, SOTA 4 und WWFF 44 QSOs (Standardregeln, im Oktober 2026 geprüft).</li><li>Park-to-Park und Summit-to-Summit: Die Referenz der Gegenstation trägst du pro QSO ein.</li><li>MY_SOTA_REF, MY_POTA_REF und MY_WWFF_REF landen automatisch im QSO.</li><li>ADIF-Export einer einzelnen Aktivierung.</li></ul></div><div><h3>Contest</h3><p class="s">Tastatur zuerst, Tempo vor Dekoration.</p><ul><li>Eingabe per Tastatur, dichtes Layout; Seriennummern, die sich nie wiederholen.</li><li>Dupe-Prüfung und Super Check Partial aus der MASTER.SCP, die du selbst lädst.</li><li>Raten und Multiplikatoren live; Bearbeiten, ohne den Contest-Modus zu verlassen.</li><li>Mitgelieferte Definitionen: CQ WW, CQ WPX, ARRL DX, IARU HF, DARC WAG sowie generische Vorlagen.</li><li>Cabrillo-Export und Contest-Sessions in Wavelog (ab Wavelog 3.2).</li></ul></div><div><h3>Field Day &amp; Portabelbetrieb</h3><p class="s">Viele QSOs, wenig Zeit, wechselnde Bediener.</p><ul><li>Fast Log Entry: QSOs als Kurzschrift tippen, sehen wie jede Zeile gelesen wurde, alle auf einmal loggen (Dialekt von Wavelogs SimpleFLE).</li><li>Feldmodus mit einem Schalter: Sonnenlicht-Thema, Handschuhmodus, Energiesparer, Display an.</li><li>Generische Contest-Vorlagen für Seriennummer- oder Austausch-Contests. Eine eigene Field-Day-Definition gibt es nicht.</li><li>Mehrere Wavelog-Konten und Stationsprofile, umschaltbar im Log.</li></ul></div><div><h3>Station zu Hause</h3><p class="s">Der ruhige Teil: pflegen, prüfen, aufräumen.</p><ul><li>„Schon gearbeitet“-Hinweise aus deinem Wavelog-Log; DXCC-Suche offline.</li><li>Rufzeichenverzeichnis aus deiner QSO-Historie, mit eigenen Notizen (nur lokal).</li><li>ADIF-Import und -Export, Backups, optionale App-Sperre per Biometrie.</li><li>Speicher freigeben: lokale Kopien bereits synchronisierter QSOs entfernen. Bei Wavelog wird nichts gelöscht.</li><li>Auf Mac und Windows wie ein Desktop-Programm: Seitenleiste, Menüleiste, Tastenkürzel.</li></ul></div></div>
+ <div class="plan"><h3><span>Geplant – noch nicht enthalten</span><span class="tag">geplant</span></h3><ul><li>Geräte-zu-Geräte-Sync im lokalen WLAN, ohne Internet</li><li>WSJT-X-Listener am Desktop</li><li>Regeleditor für die Aktivierungszählung und Two-fer</li><li>Synchronisieren im Hintergrund unter Android</li></ul></div>
+</div></section>
+
+<section class="alt" id="app"><div class="wrap">
+ <h2>Die App im Blick</h2><p class="muted">Phone, Tablet und Desktop teilen eine Bedienlogik. Die Aufnahmen stammen aus der Demo der App und zeigen Beispieldaten.</p>
+ <div class="shots">
+  <figure class="shot s-phone"><img src="/assets/img/shots/phone-01-log.jpg" alt="Tideline auf dem iPhone: Log-Ansicht mit laufender SOTA-Aktivierung, Fortschrittsanzeige „Gültige Aktivierung: 9 QSOs“ und Rufzeichenfeld mit DL1ABC" width="747" height="1624" loading="lazy"><figcaption>Log mit laufender SOTA-Aktivierung (iPhone)</figcaption></figure>
+  <figure class="shot s-tablet"><img src="/assets/img/shots/ipad-01-log.jpg" alt="Tideline auf dem iPad: Seitenleiste, Eingabeformular und Liste der letzten QSOs, alle mit Status „Synchronisiert“" width="1000" height="1333" loading="lazy"><figcaption>Log auf dem iPad: Eingabe und QSO-Liste</figcaption></figure>
+  <figure class="shot s-phone"><img src="/assets/img/shots/phone-03-sync.jpg" alt="Tideline auf dem iPhone: Sync-Ansicht mit „Alle QSOs synchronisiert“, Schaltfläche „Jetzt synchronisieren“ und Sync-Verlauf" width="747" height="1624" loading="lazy"><figcaption>Sync-Status und Verlauf (iPhone)</figcaption></figure>
+ </div>
+ <h3 class="serif themes-h">Vier Themen für jedes Licht</h3>
+ <ul class="themes"><li>Hell – Sand und Seeschaum</li><li>Dunkel – tiefe See</li><li>Sonnenlicht – maximaler Kontrast</li><li>Nachtrot – eine Farbe auf Schwarz</li></ul>
+</div></section>
+
+<section id="plus"><div class="wrap two">
+ <div><h2>Barrierefreiheit: Teil der Arbeit, kein Nachtrag</h2><p>Ziel ist WCAG 2.2 AA. Die Kontraste werden im Test geprüft, nicht nach Augenmaß.</p><ul><li>Text ≥ 4,5 : 1, Bedienelemente ≥ 3 : 1, Sonnenlicht-Thema ≥ 7 : 1 – automatisiert getestet.</li><li>Text skaliert bis 200 % ohne abgeschnittene Inhalte.</li><li>Status nie nur durch Farbe: immer Symbol und Text.</li><li>Rufzeichen liest der Screenreader Buchstabe für Buchstabe („D O 1 H O Z“).</li><li>Volle Tastaturbedienung mit sichtbarem Fokus; Bewegung folgt „Bewegung reduzieren“.</li><li>VoiceOver- und TalkBack-Handtests sind laut Changelog für 1.0 abgeschlossen.</li></ul></div>
+ <div><h2>Datenschutz: ein Versprechen, das die App hält</h2><p>Tideline sammelt keine Daten über dich. Es gibt keine Telemetrie, keine Analyse, keine Werbung, keinen Absturzdienst und keine Tracker. Die Entwickler erhalten deine Daten nie.</p><ul><li>Dein Log bleibt auf dem Gerät – und auf deinem eigenen Wavelog-Server.</li><li>Verbindungen gibt es nur zu deinem Wavelog und – wenn du auf „Herunterladen“ tippst – zu den sichtbaren Quellen der Referenzlisten.</li><li>Kein Standort, keine Kamera. Das Locator-Feld tippst du selbst.</li><li>Der API-Token liegt nur in Keychain, Android Keystore bzw. Windows-Speicher.</li><li>Datenbank und Backups sind aus iCloud-, iTunes- und Android-Backups ausgeschlossen.</li></ul><p class="honest">Ehrlich dazu: Tideline verschlüsselt selbst nichts. Der Schutz auf dem Gerät kommt vom Betriebssystem; exportierte Backups sind unverschlüsselte Dateien – bewahre sie sicher auf.</p></div>
+</div></section>
+
+<section class="alt" id="voraussetzungen"><div class="wrap two">
+ <div><h2>Voraussetzungen</h2>
+  <dl class="req"><dt>Wavelog</dt><dd>Version 3.1.0 oder neuer mit API v2. Contest-Sessions brauchen 3.2.0+.</dd><dt>API-Token</dt><dd>Pflicht: qso:read, qso:write, station:read. Optional: contest:read/write, qso:delete, lookup:read. Die App erklärt jedes Recht bei der Einrichtung.</dd><dt>Betriebssysteme</dt><dd>iOS / iPadOS 16 · Android 7.0 · macOS 12 · Windows 10 (1903)</dd><dt>Ohne Server testen</dt><dd>„Demo ausprobieren“ im Willkommensbildschirm – ohne Wavelog und ohne Netzwerkverbindung.</dd></dl></div>
+ <div id="opensource"><h2>Offen gebaut</h2><p>Tideline steht unter der MIT-Lizenz. Der Quellcode, die Entscheidungsprotokolle und die Roadmap sind öffentlich.</p>
+  <div class="links">
+   <a class="btn" href="https://github.com/ceotjoe/tideline" rel="noopener">Repository auf GitHub</a>
+   <a class="btn btn-line" href="https://github.com/ceotjoe/tideline/issues" rel="noopener">Fehler melden</a>
+   <a class="btn btn-line" href="https://github.com/ceotjoe/tideline/blob/main/CONTRIBUTING.md" rel="noopener">Mitmachen</a>
+   <a class="btn btn-line" href="https://github.com/ceotjoe/tideline/blob/main/docs/translating.md" rel="noopener">Übersetzen</a>
+  </div>
+  <p>Es gibt gute Alternativen – etwa Wavelog Mobile, den DA6IT Wavelog Offline Logger, CloudLogOffline oder HAMRS. Tideline will sie ergänzen, nicht ersetzen: Schwerpunkte sind eine Codebasis für fünf Plattformen und ein sichtbarer Sync-Status pro QSO. Vergleichstabelle im README.</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap"><h2>Häufige Fragen</h2><div class="faq">
+   <details class="faq-item"><summary>Brauche ich ein Wavelog?</summary><p>Zum Synchronisieren ja: Wavelog 3.1.0 oder neuer mit API v2. Zum Ausprobieren gibt es ein eingebautes Demo-Konto, das ohne Server und ohne Netzwerkverbindung läuft.</p></details>
+   <details class="faq-item"><summary>Funktioniert Tideline wirklich ganz ohne Netz?</summary><p>Ja. Loggen, DXCC-Suche, Referenz- und „schon gearbeitet“-Hinweise laufen lokal. Nur der Sync selbst braucht eine Verbindung – er startet, sobald eine da ist.</p></details>
+   <details class="faq-item"><summary>Was passiert, wenn Wavelog ein QSO ablehnt?</summary><p>Das QSO bleibt mit dem Status „abgelehnt“ erhalten, und die App erklärt in Klartext, warum. Nichts wird stillschweigend verworfen oder ersetzt.</p></details>
+   <details class="faq-item"><summary>Kostet die App etwas?</summary><p>Tideline ist Open Source unter der MIT-Lizenz. Im App Store ist die App kostenlos.</p></details>
+   <details class="faq-item"><summary>Sind meine Daten verschlüsselt?</summary><p>Die App verschlüsselt nicht selbst (nur TLS zur Übertragung und der sichere Speicher des Betriebssystems für den Token). Die Datenbank ist durch das Betriebssystem geschützt, Backups und Exporte sind unverschlüsselt.</p></details>
+   <details class="faq-item"><summary>Gibt es eine Field-Day-Definition?</summary><p>Nein. Für Seriennummer- und Austausch-Contests gibt es generische Vorlagen; Fast Log Entry und der Feldmodus helfen beim Tempo.</p></details>
+   <details class="faq-item"><summary>Und die WSJT-X-Anbindung?</summary><p>Ein WSJT-X-Listener für den Desktop ist geplant, aber noch nicht enthalten.</p></details>
+   <details class="faq-item"><summary>Wie unterscheidet sich Tideline von anderen Apps?</summary><p>Es gibt mehrere gute Werkzeuge. Tideline setzt auf eine Codebasis für fünf Plattformen, Offline-first und sichtbaren Sync-Status pro QSO. Probier aus, was zu deinem Betrieb passt.</p></details>
+</div></div></section>
+
+<section class="base" id="download"><div class="wrap">
+ <h2>Tideline laden</h2><p class="lead">Für iOS, iPadOS, Android, macOS und Windows – dazu Linux (x86-64 und arm64).</p>
+ <ul class="downloads">
+   <li class="dl dl-ios"><div class="dl-meta"><h3 class="dl-name">iPhone &amp; iPad</h3><p class="dl-sub">iOS / iPadOS 16 oder neuer</p></div><a class="dl-badge" href="https://apps.apple.com/de/app/tideline-for-wavelog/id6818971370" rel="noopener"><img src="/assets/badges/app-store-de.svg" alt="Laden im App Store – iPhone &amp; iPad" width="144" height="48"></a></li>
+   <li class="dl dl-mac"><div class="dl-meta"><h3 class="dl-name">Mac</h3><p class="dl-sub">macOS 12 oder neuer</p></div><a class="dl-badge" href="https://apps.apple.com/de/app/tideline-for-wavelog/id6818971370" rel="noopener"><img src="/assets/badges/mac-app-store-de.svg" alt="Laden im Mac App Store – Mac" width="187" height="48"></a></li>
+   <li class="dl dl-android"><div class="dl-meta"><h3 class="dl-name">Android</h3><p class="dl-sub">Android 7.0 oder neuer</p></div><a class="dl-badge gb gb-de" href="https://play.google.com/store/apps/details?id=com.ITWebService.tideline" rel="noopener"><img src="/assets/badges/google-play-de.png" alt="Jetzt bei Google Play – Android" width="646" height="250"></a></li>
+   <li class="dl dl-windows"><div class="dl-meta"><h3 class="dl-name">Windows</h3><p class="dl-sub">Windows 10 (1903) oder neuer · Portable-ZIP und MSIX</p></div><a class="dl-action btn btn-line" href="https://github.com/ceotjoe/tideline/releases" rel="noopener">Von GitHub Releases laden</a></li>
+   <li class="dl dl-linux"><div class="dl-meta"><h3 class="dl-name">Linux · Raspberry Pi</h3><p class="dl-sub">x86-64 und arm64 (Pi 4/5, 64-bit)</p></div><a class="dl-action btn btn-line" href="https://github.com/ceotjoe/tideline/releases" rel="noopener">Von GitHub Releases laden</a></li>
+ </ul>
+ <p class="note">Prüfsummen (SHA-256) liegen jedem GitHub-Release bei.</p>
+</div></section>
+</main>
+<footer><div class="wrap">
+ <ul class="links">
+  <li><a href="https://github.com/ceotjoe/tideline/blob/main/docs/manual/de/index.md" rel="noopener">Handbuch</a></li>
+  <li><a href="https://github.com/ceotjoe/tideline" rel="noopener">GitHub</a></li>
+  <li><a href="/de/datenschutz/">Datenschutzerklärung</a></li>
+  <li><a href="/de/impressum/">Impressum</a></li>
+  <li><a href="https://github.com/ceotjoe/tideline/blob/main/CHANGELOG.md" rel="noopener">Changelog</a></li>
+ </ul>
+ <p>© 2026 Jörg Holzapfel (DO1HOZ) und Mitwirkende. DXCC-Präfixdaten: country files von AD1C.</p>
+ <p>Kein Tracking, keine Cookies, keine externen Dienste auf dieser Seite. Apple, App Store, Mac App Store, Google Play und Windows sind Marken ihrer jeweiligen Inhaber.</p>
+</div></footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

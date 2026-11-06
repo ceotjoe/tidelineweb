@@ -1,94 +1,43 @@
-# Tideline Web (`tideline.holzapfel-online.de`)
+# Tideline-Webseite
 
-The official modern, responsive, and dynamic homepage for **[Tideline — the offline logger for Wavelog](https://github.com/ceotjoe/tideline)**.
+Statische, zweisprachige Produktseite (DE/EN) für <https://tideline.holzapfel-online.de>.
+Reines HTML/CSS/JS – keine Cookies, kein Tracking, keine externen Dienste, Schriften lokal.
 
-Designed to align directly with Tideline's **"Low Tide"** design system, featuring an interactive live QSO entry simulation, real-time Tide Gauge sync status, 4-mode field theme preview, bilingual documentation hub (EN/DE), and deployment configurations for `tideline.holzapfel-online.de`.
+## Dateien
 
----
+| Pfad | Inhalt |
+|---|---|
+| `index.html` | Sprachwahl; leitet nach Browsersprache auf `/de/` oder `/en/` |
+| `de/`, `en/` | Startseite, Impressum/Legal notice, Datenschutz/Privacy (fertiges HTML) |
+| `assets/` | CSS, JS, Schriften (Atkinson Hyperlegible, OFL), Icon, OG-Bilder, offizielle Store-Badges |
+| `data/links.json` | **Zentrale Links** (Stores, GitHub, Handbuch, Kontakt-E-Mail, Version) |
+| `data/content.json` | Alle Texte DE/EN |
+| `data/privacy.de.txt`, `privacy.en.txt` | Datenschutztexte (aus der bisherigen Seite) |
+| `tools/build.py` | erzeugt alle HTML-Seiten, `sitemap.xml`, `robots.txt` |
+| `tools/og.html`, `tools/icon.html` | Vorlagen für OG-Bild und Icons (Chrome headless) |
+| `legacy/` | alte URLs (Store-Links), von `build.py` erzeugt |
+| `.htaccess` | Rewrite für alte URLs, Sicherheits-Header (inkl. strenger CSP), Caching, Kompression |
 
-## 🌊 Key Features
+## Links oder Texte ändern
 
-- **"Low Tide" Visual Language:** Calm coastal aesthetic with soft sand (`#F6F1E7`), deep sea (`#0F1E22`), and seafoam teal accents (`#1F6F68` / `#7FD1C3`).
-- **Interactive Live QSO Simulator:** Test-drive logging contacts with real-time on-device DXCC prefix detection (e.g. `DL1XYZ`, `K1TTT`, `EA3ABC`) and simulated Wavelog v2 background sync cycle.
-- **Tide Gauge Indicator:** Visual sync bar demonstrating how queued contacts upload and settle into synchronized state.
-- **Four Dedicated Field Modes:**
-  - **Low Tide (Light):** Daytime indoor & shaded portable logging.
-  - **Deep Sea (Dark):** Restful nighttime shack logging.
-  - **High Sunlight:** High-contrast monochrome (≥ 7:1) engineered for direct alpine/beach glare.
-  - **Night Red:** Monochromatic deep red (`#FF4433`) preserving rod-cell dark adaptation for astronomical field days.
-- **Embedded Documentation Hub:** Integrated search and viewing for the official manuals (_First Setup_, _API Token & Scopes_, _Logging Offline_, _Sync & Conflicts_, _Keyboard Shortcuts_).
-- **Bilingual (EN / DE):** Full language switcher matching the app's localized UI and documentation.
-- **German Legal Compliance:** Impressum and Privacy Policy (Datenschutzerklärung) compliant with German web hosting standards.
+1. `data/links.json` bzw. `data/content.json` bearbeiten.
+2. `python3 tools/build.py` ausführen (nur Python 3, keine Pakete nötig).
+3. Geänderte Dateien hochladen.
 
----
+Neue Version: `version` in `links.json` anpassen und neu bauen.
 
-## 🛠 Local Development
+## Veröffentlichen (automatisch)
 
-### Requirements
+Jeder Push auf `main` startet `.github/workflows/deploy.yml`: `tools/build.py` läuft, die auslieferbaren Dateien werden in `dist/` gesammelt und per `rsync --delete` über SSH auf den Apache-Webserver kopiert (Repo-Secrets `DEPLOY_SSH_HOST`, `DEPLOY_SSH_USER`, `DEPLOY_SSH_KEY`, `DEPLOY_TARGET_DIR`). Ein vorgeschalteter nginx arbeitet nur als Proxy. Manuell: Actions → *Deploy Tideline Homepage* → *Run workflow*.
 
-- **Node.js** v18+ (tested with v25)
-- **npm** or **pnpm**
+Nach dem Deploy prüft der Workflow, dass die Store-Links antworten.
 
-### Commands
+**Wichtig – nicht entfernen:** `/privacy`, `/imprint`, `/datenschutz` und `/impressum` sind in den App-Stores verlinkt und müssen weiter mit HTTP 200 (ohne Weiterleitung) antworten. Sie werden von `build.py` als `legacy/*.html` erzeugt (`LEGACY`) und per `.htaccess`-Rewrite ausgeliefert (kein Ordner `/privacy/`, sonst gäbe es eine 301-Weiterleitung); `/privacy` und `/imprint` zeigen die englischen Seiten.
 
-```bash
-# Install dependencies
-npm install
-
-# Start local development server with Hot Module Replacement (HMR)
-npm run dev
-
-# Run TypeScript type check and compile production bundle into dist/
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Run Prettier code formatter
-npm run format
-```
-
----
-
-## 🚀 Deployment on `tideline.holzapfel-online.de`
-
-The build output is a static single-page application located in `dist/`.
-
-### Option A: Standard Nginx Virtual Host
-
-1. Copy `deploy/nginx.conf` to `/etc/nginx/sites-available/tideline.holzapfel-online.de`.
-2. Symlink to `/etc/nginx/sites-enabled/`.
-3. Copy the compiled `dist/` folder contents to `/var/www/tideline.holzapfel-online.de`.
-4. Run `certbot --nginx -d tideline.holzapfel-online.de` to provision SSL.
-5. Reload Nginx: `systemctl reload nginx`.
-
-### Option B: Caddy
-
-1. Use `deploy/Caddyfile` for automated HTTPS provisioning.
-2. Run `caddy reload`.
-
-### Option C: Docker
+## Lokal ansehen
 
 ```bash
-docker compose -f deploy/docker-compose.yml up -d --build
+python3 -m http.server 8099
 ```
 
-### Option D: GitHub Actions CI/CD
-
-Configure the following GitHub repository secrets:
-
-- `DEPLOY_SSH_HOST` (e.g. server IP or hostname)
-- `DEPLOY_SSH_USER` (e.g. `deploy` or `root`)
-- `DEPLOY_SSH_KEY` (SSH private key)
-- `DEPLOY_TARGET_DIR` (default: `/var/www/tideline.holzapfel-online.de`)
-
-Every push to `main` will automatically build and deploy the updated site.
-
----
-
-## 📄 License & Attribution
-
-- **License:** MIT License.
-- **App Repository:** [github.com/ceotjoe/tideline](https://github.com/ceotjoe/tideline)
-- **Maintainer:** DO1HOZ / Jörg Holzapfel.
-- **Wavelog:** Wavelog is an independent open-source project by Wavelog contributors.
+Dann <http://localhost:8099/> öffnen (Pfade sind absolut ab Wurzel, daher kein Öffnen per Doppelklick).

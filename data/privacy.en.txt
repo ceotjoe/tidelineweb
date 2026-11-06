@@ -1,0 +1,102 @@
+1. Privacy at a Glance
+
+General Information
+The following notes provide a simple overview of what happens to your personal data when you visit this website or use the Tideline application. Personal data is any data that can be used to identify you personally.
+
+Data Controller (Verantwortliche Stelle)
+The controller responsible for data processing on this website and in the Tideline app pursuant to the General Data Protection Regulation (GDPR / DSGVO) is:
+
+Jörg Holzapfel (DO1HOZ)
+Justus-von-Liebig-Str. 20a
+83052 Bruckmühl
+Germany
+Email: {{EMAIL}}
+Website: https://tideline.holzapfel-online.de
+(Please refer to the Impressum / Legal Notice on this website for further details.)
+
+
+2. Web Hosting & Infrastructure (Website)
+
+Hosting with STRATO
+This website is hosted on servers of STRATO AG, Otto-Ostrowski-Straße 7, 10249 Berlin, Germany (hereinafter: "STRATO").
+When you access this website, STRATO automatically collects technical data in server log files. For details, please consult STRATO's privacy policy: https://www.strato.de/datenschutz/.
+
+The use of STRATO is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the technically secure, rapid, and reliable provision of our website.
+
+Data Processing Agreement (AVV)
+We have concluded a Data Processing Agreement (Auftragsverarbeitungsvertrag, AVV) pursuant to Art. 28 GDPR with STRATO. This contract ensures that STRATO processes personal data of our visitors strictly in accordance with our instructions and in full compliance with the GDPR.
+
+Server Log Files
+The hosting provider automatically collects and stores technical information in server log files that your browser transmits automatically:
+• Browser type and browser version
+• Operating system used
+• Referrer URL (previously visited page)
+• Hostname of the accessing device
+• Time of the server request
+• IP address (anonymized by the hosting provider)
+
+This data is not combined with other data sources. Data processing is based on Art. 6(1)(f) GDPR (legitimate interest in the error-free delivery, security, and stability of the web service).
+
+
+3. Data Collection on this Website
+
+No Cookies and No Analytics
+This website uses no cookies, no tracking pixels, and no web analytics tools (such as Google Analytics or Matomo). Only the language and colour scheme you choose are stored locally in your browser (localStorage); this information never leaves your device.
+
+No Third-Party CDNs or External Fonts
+All fonts, icons, and stylesheets are bundled and hosted locally on our web server. No connections to external third-party services (such as Google Fonts or external CDN providers) are established when visiting this website.
+
+Contact via Email
+If you contact us via email, your message including the personal data you provide (such as your name, email address, and inquiry content) is stored and processed for the purpose of handling your inquiry and potential follow-up questions. We do not transfer this data to third parties without your consent.
+
+The legal basis for processing is Art. 6(1)(b) GDPR if your inquiry is related to a contract or pre-contractual measures, and Art. 6(1)(f) GDPR (legitimate interest in processing user inquiries) in all other cases.
+
+Data will be retained until the purpose for storage ceases to apply (e.g. inquiry resolved) or you request deletion, unless statutory retention requirements apply.
+
+SSL / TLS Encryption
+For security reasons and to protect the transmission of data, this website uses SSL/TLS encryption. You can identify an encrypted connection by the "https://" prefix and the lock icon in your browser address bar.
+
+
+4. Data Protection in the "Tideline" App
+
+Offline-First Local Storage & OS Protection (ADR 0034)
+Tideline is an offline-first logging application for amateur radio operators:
+• All entered QSO records, callsigns, signal reports, frequencies, modes, timestamps, locators, callsign directory entries, and notes are stored strictly locally in a plain SQLite database on your device.
+• Tideline does not apply custom app-level encryption (ITSAppUsesNonExemptEncryption is false). On-device data at rest is protected by your operating system's storage security and device lock screen, and excluded from automatic cloud backups (iCloud, iTunes, Google cloud backup). Exported ADIF, Cabrillo, and .tlbackup files are plain files saved only where you choose.
+• Sensitive credentials (API tokens for your Wavelog instance) are stored exclusively in your operating system's secure store (iOS/macOS Keychain, Android Keystore, Windows protected storage, Linux Secret Service / Keyring) and are never included in backups or exports.
+• The maintainer of Tideline has no access to your logs, QSOs, or account credentials.
+
+Direct Synchronization with Wavelog & Reference Downloads
+• Wavelog Sync: When you configure and trigger synchronization, Tideline connects directly and exclusively between your client device and your chosen Wavelog server(s) via the official Wavelog API v2. Tideline does not operate intermediary relay servers, proxies, or central cloud sync services.
+• Reference Lists (User-Initiated Only): Only when you actively press "Download" or "Update" in Settings, Tideline fetches public reference files over HTTPS (MASTER.SCP from supercheckpartial.com, SOTA summits from sotadata.org.uk / storage.sota.org.uk, POTA parks from pota.app, WWFF directory from wwff.co) using a generic Tideline/<version> user-agent without transmitting any personal or log data.
+• Built-in Demo Mode: The built-in demo account on the Welcome screen runs 100% inside the app and makes no network connections.
+
+No Telemetry, No Analytics, No Ads
+The Tideline application contains:
+• No tracking or usage analytics SDKs (e.g. no Google Analytics, Firebase, or similar)
+• No third-party crash reporting SDKs
+• No advertising libraries or marketing trackers
+• No background telemetry
+
+App Permissions
+The app requests only permissions necessary for its intended features:
+• Internet / Local network access: Exclusively to communicate with your configured Wavelog instance(s) (including on your LAN) and to download reference lists when requested by you.
+• Biometrics (optional): Used solely for the optional app lock, evaluated strictly by the operating system. Tideline never sees biometric data.
+• Location & Camera: Not used. Tideline never requests GPS location or camera access; you enter your Maidenhead grid locator manually or from a chosen reference.
+
+App Stores & Distribution
+Tideline is distributed via Apple App Store / TestFlight (Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA), Google Play Store (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), and GitHub Releases. When downloading or updating the application, the respective platform provider processes your account and device data according to their own privacy policies (Apple: https://www.apple.com/legal/privacy/ | Google: https://policies.google.com/privacy).
+
+
+5. Your Rights as a Data Subject (GDPR)
+
+Under the GDPR, you have the following rights at any time regarding your personal data:
+• Right of Access (Art. 15 GDPR): Free information about your stored personal data, origin, recipient, and purpose.
+• Right to Rectification (Art. 16 GDPR): Immediate correction or completion of inaccurate data.
+• Right to Erasure (Art. 17 GDPR): Deletion of stored data unless statutory retention obligations apply.
+• Right to Restriction of Processing (Art. 18 GDPR): Restriction of data processing under statutory conditions.
+• Right to Data Portability (Art. 20 GDPR): Delivery of your data in a structured, commonly used, and machine-readable format.
+• Right to Object (Art. 21 GDPR): Right to object at any time to processing based on Art. 6(1)(e) or (f) GDPR on grounds relating to your particular situation.
+• Right to Lodge a Complaint (Art. 77 GDPR): Right to lodge a complaint with a competent data protection supervisory authority.
+
+To exercise your rights, please contact the controller using the email address indicated above.
