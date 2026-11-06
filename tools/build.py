@@ -333,7 +333,8 @@ def linkify(s):
 
 
 def mail_span(addr):
-    return f'<span data-mail="{esc(addr.replace("@", " (at) "))}">{esc(addr.replace("@", " (at) "))}</span>'
+    # Adresse rückwärts im HTML; CSS (.mail-rev) zeigt sie korrekt an, site.js macht einen mailto-Link daraus
+    return f'<span class="mail-rev" data-mail>{esc(addr[::-1])}</span>'
 
 
 def text_to_html(raw, lang):

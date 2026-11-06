@@ -189,3 +189,5 @@ footer .links li{display:inline;margin-right:1.4rem}
 .shot img{width:100%;height:auto;border-radius:22px;border:2px solid var(--outline);box-shadow:0 12px 30px rgba(18,52,59,.18)}
 .shot figcaption{margin-top:.7rem;font-size:.9rem;color:var(--text-2)}
 @media(max-width:760px){.shots{grid-template-columns:1fr 1fr}.s-tablet{grid-column:1/-1;order:-1}}
+
+.mail-rev{unicode-bidi:bidi-override;direction:rtl}

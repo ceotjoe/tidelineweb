@@ -17,10 +17,10 @@
     var b = e.target.closest("[data-theme-set]");
     if (b) { set("tl-theme", b.getAttribute("data-theme-set")); theme(); }
   });
-  // E-Mail-Adresse erst im Browser zusammensetzen (Spam-Schutz); ohne JS steht sie als „name (at) domain“ im Text
+  // E-Mail-Adresse steht rückwärts im HTML (Spam-Schutz); CSS stellt sie ohne JS korrekt dar, hier wird ein Link daraus
   d.querySelectorAll("[data-mail]").forEach(function (n) {
-    var m = n.getAttribute("data-mail").replace(" (at) ", "@");
-    var a = d.createElement("a"); a.href = "mailto:" + m; a.textContent = m; n.textContent = ""; n.appendChild(a);
+    var m = n.textContent.split("").reverse().join("");
+    var a = d.createElement("a"); a.href = "mailto:" + m; a.textContent = m; n.className = ""; n.textContent = ""; n.appendChild(a);
   });
   // Scroll-Story
   var st = d.getElementById("story");
